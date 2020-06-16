@@ -1,0 +1,16 @@
+{
+     "files.associations": {
+          "iostream": "cpp",
+          "vector": "cpp",
+          "memory": "cpp",
+          "system_error": "cpp",
+          "type_traits": "cpp",
+          "xmemory": "cpp",
+          "xstddef": "cpp",
+          "xstring": "cpp",
+          "ios": "cpp",
+          "utility": "cpp",
+          "random": "cpp"
+     },
+     "C_Cpp.errorSquiggles": "Enabled"
+}
