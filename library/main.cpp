@@ -69,6 +69,7 @@ int main(){
 
     while(t--){
         solve();
+        std::cout<<'\n';
     }
     return 0;
 }
