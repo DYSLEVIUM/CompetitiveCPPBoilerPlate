@@ -1,5 +1,5 @@
-//Compile: g++ -std=c++17 -Wshadow -Wall main.cpp -o a.exe -O2 -Wno-unused-result
-//Build: g++ -std=c++17 -Wshadow -Wall -o "%e" "%f" -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
+//Compile: g++ -Wshadow -Wall main.cpp -o a.exe -O2 -Wno-unused-result
+//Build: g++ -Wshadow -Wall -o "%e" "%f" -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
 
 #include <bits/stdc++.h>
 
@@ -13,7 +13,7 @@
 #define ps(x, y) std::fixed << setprecision(y) << x
 #define setbits(x) __builtin_popcountll(x)
 #define zrobits(x) __builtin_ctzll(x)
-#define mk(arr, n, type) type *arr = new type[n];
+#define mk(arr, n, type) type *arr = new type[n]
 
 #define gc getchar_unlocked
 #define ll long long
@@ -74,5 +74,5 @@ int main(){
 using namespace std;
 
 void solve(){
-    cout<<'yo';
+    cout<<"yo";
 }
