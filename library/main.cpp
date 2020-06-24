@@ -4,18 +4,6 @@
 
 #include <bits/stdc++.h>
 
-#define fo(i, n) for (int i = 0; i < n; ++i)
-#define Fo(i, k, n) for (int i = k; k < n ? i < n : i > n; k < n ? ++i: --i)
-#define all(x) x.begin(), x.end()
-#define clr(x) memset(x, 0, sizeof(x))
-#define deb(x) cout << #x << "=" << x << endl
-#define sortall(x) sort(all(x))
-#define tr(it, a) for(auto it = a.begin(); it != a.end(); ++it)
-#define ps(x, y) std::fixed << setprecision(y) << x
-#define setbits(x) __builtin_popcountll(x)
-#define zrobits(x) __builtin_ctzll(x)
-#define mk(arr, n, type) type *arr = new type[n]
-
 #define gc getchar_unlocked
 #define ll long long
 #define ld long double
@@ -39,6 +27,18 @@
 #define PI 3.14159265358979323846264
 #define MOD 1e9+7
 #define INF 1e18
+
+#define fo(i, n) for (int i = 0; i < n; ++i)
+#define Fo(i, k, n) for (int i = k; k < n ? i < n : i > n; k < n ? ++i: --i)
+#define all(x) x.begin(), x.end()
+#define clr(x) memset(x, 0, sizeof(x))
+#define deb(x) cout << #x << "=" << x << endl
+#define sortall(x) sort(all(x))
+#define tr(it, a) for(auto it = a.begin(); it != a.end(); ++it)
+#define ps(x, y) std::fixed << setprecision(y) << x
+#define setbits(x) __builtin_popcountll(x)
+#define zrobits(x) __builtin_ctzll(x)
+#define mk(arr, n, type) type *arr = new type[n]
 
 std::mt19937_64 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 
