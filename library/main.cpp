@@ -20,6 +20,7 @@
 #define pqs std::priority_queue<int, vi, std::greater<int>>
 
 #define pb push_back
+#define eb emplace_back
 #define mp make_pair
 #define F first
 #define S second
