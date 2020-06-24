@@ -43,33 +43,33 @@
 std::mt19937_64 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 
 void setup(){     
-     std::ios_base::sync_with_stdio(0);
-     std::cin.tie(0);
-     std::cout.tie(0);
+    std::ios_base::sync_with_stdio(0);
+    std::cin.tie(0);
+    std::cout.tie(0);
 
-     #ifdef LOCAL_PROJECT                    //run with -DLOCAL_PROJECT drung compilation
-          freopen("input.txt", "r", stdin);
-     #else
-          #ifndef ONLINE_JUDGE               //runs automatically for supported online judges
-               freopen("input.txt", "r", stdin);
-               freopen("output.txt", "w", stdout);
-          #endif
-     #endif 
+    #ifdef LOCAL_PROJECT                    //run with -DLOCAL_PROJECT drung compilation
+        freopen("input.txt", "r", stdin);
+    #else
+        #ifndef ONLINE_JUDGE               //runs automatically for supported online judges
+            freopen("input.txt", "r", stdin);
+            freopen("output.txt", "w", stdout);
+        #endif
+    #endif 
 }
 
 void solve();
 
 int main(){
-     setup();
+    setup();
 
-     int t = 1;
+    ll t = 1;
 
-     std::cin>>t;    //Comment this if testCases = 1
+    std::cin>>t;    //Comment this if testCases = 1
 
-     while(t--){
-          solve();
-     }
-     return 0;
+    while(t--){
+        solve();
+    }
+    return 0;
 }
 
 using namespace std;
