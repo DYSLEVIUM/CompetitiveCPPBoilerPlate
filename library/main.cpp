@@ -1,5 +1,6 @@
 //Compile: g++ -Wshadow -Wall main.cpp -o a.exe -O2 -Wno-unused-result
 //Build: g++ -Wshadow -Wall -o "%e" "%f" -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
+//Compile and run: g++ -Wshadow -Wall main.cpp -o a.exe -O2 -Wno-unused-result && a.exe
 
 #include <bits/stdc++.h>
 
