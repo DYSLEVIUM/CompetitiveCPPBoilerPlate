@@ -4,22 +4,23 @@
 		{
 			"type": "shell",
 			"label": "C/C++: g++.exe build active file",
-			"command": "D:\\dev\\c++\\gcc\\mingw32\\bin\\g++.exe",
+			"command": "D:\\dev\\sdk\\mingw64\\mingw64\\bin\\g++.exe",	//path of compiler
 			"args": [
 				"-g",
-				"-std=c++17",
-				"-Wshadow",
-				"-Wall",
-				"${file}",
+				"-Wshadow",	//warning for shadowed variable
+				"-Wall",	//warnings in gcc
+				"${file}",	//file to compile
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe",
-				"-O2",
-				"-Wno-unused-result"
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",	//exe or out file
+				"-O2",	//level 2 optimization
+				"-Wno-unused-result"	//don't warn if result of a function is not used
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},
-			"problemMatcher": ["$gcc"],
+			"problemMatcher": [
+				"$gcc"
+			],
 			"group": {
 				"kind": "build",
 				"isDefault": true
