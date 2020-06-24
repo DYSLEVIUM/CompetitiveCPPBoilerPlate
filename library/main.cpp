@@ -63,7 +63,7 @@ int main(){
 
      int t = 1;
 
-     std::cin>>t;
+     std::cin>>t;    //Comment this if testCases = 1
 
      while(t--){
           solve();
@@ -74,4 +74,5 @@ int main(){
 using namespace std;
 
 void solve(){
+    cout<<'yo';
 }
