@@ -61,7 +61,7 @@ void solve();
 int main(){
      setup();
 
-     int t;
+     int t = 1;
 
      std::cin>>t;
 
