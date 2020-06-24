@@ -74,5 +74,4 @@ int main(){
 using namespace std;
 
 void solve(){
-    cout<<"yo";
 }
