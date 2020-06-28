@@ -1,6 +1,7 @@
-//Compile: g++ -g -Wshadow -Wall main.cpp -o a.exe -O2 -Wno-unused-result
+//Compile: g++ -g -Wshadow -Wall main.cpp -o a.exe -Ofast -Wno-unused-result
 //Build: g++ -g -Wshadow -Wall -o "%e" "%f" -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
-//Compile and run: g++ -g -Wshadow -Wall main.cpp -o a.exe -O2 -Wno-unused-result && a.exe
+//Compile and run: g++ -g -Wshadow -Wall main.cpp -o a.exe -Ofast -Wno-unused-result && a.exe
+#pragma GCC optimize("Ofast")
 
 #include <bits/stdc++.h>
 
@@ -29,8 +30,8 @@
 #define MOD 1e9+7
 #define INF 1e18
 
-#define fo(i, n) for (int i = 0; i < n; ++i)
-#define Fo(i, k, n) for (int i = k; k < n ? i < n : i > n; k < n ? ++i: --i)
+#define fo(i, n) for (ll i = 0; i < n; ++i)
+#define Fo(i, k, n) for (ll i = k; k < n ? i < n : i > n; k < n ? ++i: --i)
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define deb(x) cout << #x << "=" << x << endl
@@ -62,7 +63,6 @@ void solve();
 
 int main(){
     setup();
-
     ll t = 1;
 
     std::cin>>t;    //Comment this if testCases = 1
