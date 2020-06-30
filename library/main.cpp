@@ -85,7 +85,7 @@ int main() {
 
     ll t = 1;
 
-    std::cin >> t;  //Comment this if testCases = 1
+    std::cin >> t;
 
     while (t--) {
         solve();
