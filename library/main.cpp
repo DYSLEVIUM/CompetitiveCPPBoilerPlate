@@ -28,7 +28,7 @@
 
 #define PI 3.14159265358979323846264
 #define MOD 1e9 + 7
-#define INF __builtin_infl()
+#define INF INT64_MAX;
 
 #define fo(i, n) for (ll i = 0; i < n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < n ? i < n : i > n; k < n ? ++i : --i)
@@ -64,8 +64,6 @@ inline void solve();
 int main() {
     setup();
     ll t = 1;
-
-    ll* n = &t;
 
     std::cin >> t;  //Comment this if testCases = 1
 
