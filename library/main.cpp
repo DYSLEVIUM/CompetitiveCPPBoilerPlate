@@ -1,31 +1,50 @@
 //Compile: g++ -g -Wshadow -Wall main.cpp -o a.exe -Ofast -Wno-unused-result
 //Build: g++ -g -Wshadow -Wall -o "%e" "%f" -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG
 //Compile and run: g++ -g -Wshadow -Wall main.cpp -o a.exe -Ofast -Wno-unused-result && a.exe
+
 #pragma GCC optimize("Ofast")
 
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <bitset>
+#include <chrono>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <deque>
+#include <functional>
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <map>
+#include <numeric>
+#include <queue>
+#include <random>
+#include <set>
+#include <stack>
+#include <string>
+#include <utility>
+#include <vector>
+
+typedef long long ll;
+typedef long double ld;
+typedef std::pair<int, int> pii;
+typedef std::pair<long, long> pl;
+typedef std::vector<int> vi;
+typedef std::vector<ll> vl;
+typedef std::vector<pii> vpii;
+typedef std::vector<pl> vpl;
+typedef std::vector<vi> vvi;
+typedef std::vector<vl> vll;
+typedef std::map<int, int> mii;
+typedef std::priority_queue<int> pqd;
+typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 
 #define gc getchar_unlocked
-#define ll long long
-#define ld long double
-#define pii std::pair<int, int>
-#define pl std::pair<long, long>
-#define vi std::vector<int>
-#define vl std::vector<ll>
-#define vpii std::vector<pii>
-#define vpl std::vector<pl>
-#define vvi std::vector<vi>
-#define vvl std::vector<vl>
-#define mii std::map<int, int>
-#define pqb std::priority_queue<int>
-#define pqs std::priority_queue<int, vi, std::greater<int>>
-
 #define pb push_back
 #define eb emplace_back
 #define mp make_pair
 #define F first
 #define S second
-
 #define PI 3.14159265358979323846264
 #define MOD 1e9 + 7
 #define INF INT64_MAX;
@@ -35,7 +54,7 @@
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define deb(x) cout << #x << "=" << x << endl
-#define sortall(x) sort(all(x))
+#define sortall(x) sort(x.begin(), x.end())
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); ++it)
 #define ps(x, y) std::fixed << setprecision(y) << x
 #define setbits(x) __builtin_popcountll(x)
@@ -45,9 +64,9 @@
 std::mt19937_64 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 
 inline void setup() {
-    std::ios_base::sync_with_stdio(0);
-    std::cin.tie(0);
-    std::cout.tie(0);
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(NULL);
+    std::cout.tie(NULL);
 
 #ifdef LOCAL_PROJECT  //run with -DLOCAL_PROJECT drung compilation
     freopen("input.txt", "r", stdin);
@@ -63,6 +82,7 @@ inline void solve();
 
 int main() {
     setup();
+
     ll t = 1;
 
     std::cin >> t;  //Comment this if testCases = 1
