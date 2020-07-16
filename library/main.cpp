@@ -97,8 +97,7 @@ int main() {
     
 //     clock_t endT = clock();
 
-//     std::cout << '\n'
-//               << ((double)endT - startT) / CLOCKS_PER_SEC;
+//     std::cout << ((double)endT - startT) / CLOCKS_PER_SEC;
   
     return 0;
 }
