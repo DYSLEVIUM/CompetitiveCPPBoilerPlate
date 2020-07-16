@@ -58,7 +58,7 @@ typedef std::priority_queue<int, vi, std::greater<int>> pqi;
                     << #x << " = " << x << '\n'
 #define sortall(x) sort(x.begin(), x.end())
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); ++it)
-#define ps(x, y) std::fixed << setprecision(y) << x
+#define ps(x, y) std::fixed << std::setprecision(y) << x
 #define setbits(x) __builtin_popcountll(x)
 #define zrobits(x) __builtin_ctzll(x)
 #define mk(arr, n, type) type* arr = new type[n]
