@@ -91,20 +91,19 @@ int main() {
 
     std::cin >> t;
 
-//     clock_t startT = clock();
-
+    // clock_t startT = clock();
     while (t--) {
         solve();
     }
-    
-//     clock_t endT = clock();
+    // clock_t endT = clock();
 
-//     std::cout << ((double)endT - startT) / CLOCKS_PER_SEC;
-  
+    // std::cout << ((double)endT - startT) / CLOCKS_PER_SEC;
+
     return 0;
 }
 
 using namespace std;
 
 inline void solve() {
+    cout << '\n';
 }
