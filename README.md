@@ -22,5 +22,5 @@ Build using the command -
 # FAQs
 
 1. If you get the error - **cannot open source file "bits/stdc++.h"**, make sure that the compiler you used contains the **bits** folder from MinGW if using any other compiler like MSVC. Or you can insert the include path in the **tasks.json** for this current setup of VS code.
-</br></br>   (Preferably don't use non - standard header files supported only by GCC, if you are using a template beforehand. Also, a point to note is that the compile time of the program increases; boils down to personal preference **¯\_(ツ)_/¯**)
+</br></br>(Preferably don't use non - standard header files supported only by GCC, if you are using a template beforehand. Also, a point to note is that the compile time of the program increases; boils down to personal preference **¯\\_(ツ)_/¯**)</br></br>
 2. To get output in the Command Line, pass the **"-DLOCAL_PROJECT"** flag.
