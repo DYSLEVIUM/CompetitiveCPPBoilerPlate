@@ -12,7 +12,7 @@
 				"${file}",	//file to compile
 				"-o",	//output followed by name of file
 				"${fileDirname}\\${fileBasenameNoExtension}.exe",	//exe or out file
-				"-O2",	//level 2 optimization
+				"-Ofast",	//optimization
 				"-Wno-unused-result"	//don't warn if result of a function is not used
 			],
 			"options": {
