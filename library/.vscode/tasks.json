@@ -4,7 +4,7 @@
 		{
 			"type": "shell",
 			"label": "C/C++: g++.exe build active file",
-			"command": "D:\\dev\\cpp\\sdk\\mingw64\\mingw64\\bin\\g++.exe",	//path of compiler
+			"command": "D:\\dev\\cpp\\sdk\\mingw64\\bin\\g++.exe",	//path of compiler
 			"args": [
 				"-g",	//default debug information
 				"-Wshadow",	//warning for shadowed variable
