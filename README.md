@@ -11,11 +11,11 @@ This is a simple boilerplate code that I use in my competitive programming.
 
 Compile using the command -  
 
-**`g++ -std=c++17 -Wshadow -Wall main.cpp -o a.exe -Ofast -Wno-unused-result -DONLINE_JUDGE`**
+**`g++ -g -Wshadow -Wall main.cpp -o a.exe -Ofast -Wno-unused-result -DONLINE_JUDGE`**
   
 Build using the command -  
 
-**`g++ -g -std=c++17 -Wshadow -Wall main.cpp -o a.exe -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -DLOCAL_PROJECT`**
+**`g++ -g -Wshadow -Wall main.cpp -o a.exe -D_GLIBCXX_DEBUG -DLOCAL_PROJECT`**
 
 **NOTE :-** Make sure you have the inputs in another file named **"input.txt"**.
 
