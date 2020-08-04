@@ -91,9 +91,7 @@ int main() {
 
     std::cin >> t;
 
-    while (t--) {
-        solve();
-    }
+    while (t--) solve();
 
     return 0;
 }
