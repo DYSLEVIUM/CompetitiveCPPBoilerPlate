@@ -67,21 +67,7 @@ typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 
 std::mt19937_64 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 
-inline void setup() {
-    std::ios_base::sync_with_stdio(false);
-    std::cin.tie(NULL);
-    std::cout.tie(NULL);
-
-#ifdef LOCAL_PROJECT  //run with -DLOCAL_PROJECT drung compilation
-    freopen("input.txt", "r", stdin);
-#else
-#ifndef ONLINE_JUDGE  //runs automatically for supported online judges
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-#endif
-}
-
+inline void setup();
 inline void solve();
 
 int main() {
@@ -94,6 +80,21 @@ int main() {
     while (t--) solve(), std::cout << '\n';
 
     return 0;
+}
+
+inline void setup() {
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(NULL);
+    std::cout.tie(NULL);
+
+#ifdef LOCAL_PROJECT  //run with -DLOCAL_PROJECT during compilation
+    freopen("input.txt", "r", stdin);
+#else
+#ifndef ONLINE_JUDGE  //runs automatically for supported online judges
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+#endif
 }
 
 using namespace std;
