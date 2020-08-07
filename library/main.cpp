@@ -57,7 +57,7 @@ typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define deb(x) cout << '\n' \
-                    << #x << " = " << x
+                    << #x << " = " << x << '\n'
 #define sortall(x) sort(x.begin(), x.end())
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); ++it)
 #define ps(x, y) std::fixed << std::setprecision(y) << x
