@@ -84,8 +84,8 @@ int main() {
 
 inline void setup() {
     std::ios_base::sync_with_stdio(false);
-    std::cin.tie(NULL);
-    std::cout.tie(NULL);
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
 
 #ifdef LOCAL_PROJECT  //run with -DLOCAL_PROJECT during compilation
     freopen("input.txt", "r", stdin);
