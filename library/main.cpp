@@ -37,18 +37,13 @@ typedef std::vector<ll> vl;
 typedef std::vector<pii> vpii;
 typedef std::vector<pl> vpl;
 typedef std::vector<vi> vvi;
-typedef std::vector<vl> vll;
+typedef std::vector<vl> vvl;
 typedef std::map<int, int> mii;
 typedef std::priority_queue<int> pqd;
 typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 
-#define gc getchar_unlocked
 #define pb push_back
 #define eb emplace_back
-#define mp make_pair
-#define F first
-#define S second
-#define PI 3.14159265358979323846264
 #define MOD 1e9 + 7
 #define INF INT64_MAX;
 
@@ -82,8 +77,8 @@ int main() {
 
 inline void setup() {
     std::ios_base::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    std::cout.tie(nullptr);
+    std::cin.tie(NULL);
+    std::cout.tie(NULL);
 
 #ifdef LOCAL_PROJECT  //run with -DLOCAL_PROJECT during compilation
     freopen("input.txt", "r", stdin);
