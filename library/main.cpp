@@ -45,13 +45,16 @@ typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 #define pb push_back
 #define eb emplace_back
 #define MOD 1e9 + 7
+#define PI 3.14159265358979323846
 #define INF INT64_MAX;
 
 #define fo(i, n) for (ll i = 0; i < n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < n ? i < n : i > n; k < n ? ++i : --i)
 #define all(x) x.begin(), x.end()
+#define clr(x) memset(x, 0, sizeof(x))
 #define deb(x) cout << '\n' \
                     << #x << " = " << x << '\n'
+#define sortall(x) sort(x.begin(), x.end())
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); ++it)
 #define ps(x, y) std::fixed << std::setprecision(y) << x
 #define setbits(x) __builtin_popcountll(x)
