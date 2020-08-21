@@ -4,6 +4,8 @@
 
 #pragma GCC optimize("Ofast")
 
+#include <assert.h>
+
 #include <algorithm>
 #include <bitset>
 #include <chrono>
