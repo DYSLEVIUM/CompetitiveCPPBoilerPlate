@@ -69,7 +69,7 @@ std::mt19937_64 rng(std::chrono::high_resolution_clock::now().time_since_epoch()
 inline void setup();
 inline void solve();
 
-int main() {
+int main(int argc, char* argv[]) {
     setup();
 
     ll t = 1;
