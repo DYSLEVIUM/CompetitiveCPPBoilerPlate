@@ -49,7 +49,7 @@ typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 #define S second
 #define MOD 1e9 + 7
 #define PI 3.14159265358979323846
-#define INF INT64_MAX
+#define INF __builtin_inff()
 
 #define fo(i, n) for (ll i = 0; i < n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < n ? i < n : i > n; k < n ? ++i : --i)
@@ -74,7 +74,7 @@ int main(int argc, char* argv[]) {
 
     ll t = 1;
 
-    std::cin >> t;
+    // std::cin >> t;
 
     while (t--) solve(), std::cout << '\n';
 
