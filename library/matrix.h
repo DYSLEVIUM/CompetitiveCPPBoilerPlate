@@ -170,6 +170,7 @@ class Matrix {
 
     ~Matrix() {
         delete[] data;
-        delete[] identity;
+        // deleting the identity matrix is causing some error
+        // delete[] identity;
     }
 }
