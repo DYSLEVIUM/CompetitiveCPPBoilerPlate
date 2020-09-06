@@ -12,6 +12,7 @@
 #include <cstring>
 #include <ctime>
 #include <deque>
+#include <forward_list>
 #include <functional>
 #include <iomanip>
 #include <iostream>
