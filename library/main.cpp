@@ -47,13 +47,13 @@ typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 #define eb emplace_back
 #define F first
 #define S second
-#define MOD 1e9 + 7
+#define MOD (long long)1e9 + 7
 #define PI 3.14159265358979323846
 #define INF __builtin_inff()
 
 #define fo(i, n) for (ll i = 0; i < n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < n ? i < n : i > n; k < n ? ++i : --i)
-#define all(x) x.begin(), x.end()
+#define allC(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define deb(x) cout << '\n' \
                     << #x << " = " << x << '\n'
@@ -86,10 +86,10 @@ inline void setup() {
     std::cin.tie(NULL);
     std::cout.tie(NULL);
 
-#ifdef LOCAL_PROJECT  //run with -DLOCAL_PROJECT during compilation
+#ifdef LOCAL_PROJECT  // run with -DLOCAL_PROJECT during compilation
     freopen("input.txt", "r", stdin);
 #else
-#ifndef ONLINE_JUDGE  //runs automatically for supported online judges
+#ifndef ONLINE_JUDGE  // runs automatically for supported online judges
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
