@@ -4,7 +4,31 @@
 
 #pragma GCC optimize("Ofast")
 
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <bitset>
+#include <cassert>
+#include <chrono>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <deque>
+#include <forward_list>
+#include <functional>
+#include <iomanip>
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <map>
+#include <numeric>
+#include <queue>
+#include <random>
+#include <set>
+#include <stack>
+#include <string>
+#include <unordered_map>
+#include <unordered_set>
+#include <utility>
+#include <vector>
 
 #define MOD (uint32_t)1e9 + 7
 #define PI 3.14159265358979323846
