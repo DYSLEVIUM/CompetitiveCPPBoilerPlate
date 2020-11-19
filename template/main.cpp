@@ -64,7 +64,7 @@ inline void setup() {
 #ifdef LOCAL_PROJECT  // run with -DLOCAL_PROJECT during compilation
     freopen("input.txt", "r", stdin);
 #else
-#ifndef ONLINE_JUDGE  // runs automatically for supported online judges
+#ifndef ONLINE_JUDGE  // takes input from file and dumps it to another file
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
