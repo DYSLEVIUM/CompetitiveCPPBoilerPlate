@@ -5,6 +5,7 @@
 #pragma GCC optimize("Ofast,fast-math")
 
 #include <algorithm>
+#include <array>
 #include <bitset>
 #include <cassert>
 #include <chrono>
@@ -44,6 +45,7 @@ typedef std::map<int, int> mii;
 typedef std::priority_queue<int> pqd;
 typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 
+#define pb push_back
 #define eb emplace_back
 #define F first
 #define S second
@@ -54,10 +56,8 @@ typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 #define fo(i, n) for (ll i = 0; i < n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < n ? i < n : i > n; k < n ? ++i : --i)
 #define allC(x) x.begin(), x.end()
-#define clr(x) memset(x, 0, sizeof(x))
 #define deb(x) cout << '\n' \
                     << #x << " = " << x << '\n'
-#define sortall(x) sort(x.begin(), x.end())
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); ++it)
 #define ps(x, y) std::fixed << std::setprecision(y) << x
 #define setbits(x) __builtin_popcountll(x)
