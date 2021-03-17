@@ -1,35 +1,7 @@
-//Compile: g++ -g -Wshadow -Wall main.cpp -o a.exe -Ofast -Wno-unused-result
-//Build: g++ -g -Wshadow -Wall main.cpp -o a.exe -D_GLIBCXX_DEBUG
-//Compile and run: g++ -g -Wshadow -Wall main.cpp -o a.exe -Ofast -Wno-unused-result && a.exe
-
+#define _USE_MATH_DEFINES
 #pragma GCC optimize("Ofast,fast-math")
 
-#include <algorithm>
-#include <array>
-#include <bitset>
-#include <cassert>
-#include <chrono>
-#include <cmath>
-#include <cstring>
-#include <ctime>
-#include <deque>
-#include <forward_list>
-#include <functional>
-#include <iomanip>
-#include <iostream>
-#include <iterator>
-#include <list>
-#include <map>
-#include <numeric>
-#include <queue>
-#include <random>
-#include <set>
-#include <stack>
-#include <string>
-#include <unordered_map>
-#include <unordered_set>
-#include <utility>
-#include <vector>
+#include <bits/stdc++.h>
 
 typedef long long ll;
 typedef long double ld;
@@ -45,7 +17,6 @@ typedef std::map<int, int> mii;
 typedef std::priority_queue<int> pqd;
 typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 
-#define pb push_back
 #define eb emplace_back
 #define F first
 #define S second
@@ -56,30 +27,17 @@ typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 #define fo(i, n) for (ll i = 0; i < n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < n ? i < n : i > n; k < n ? ++i : --i)
 #define allC(x) x.begin(), x.end()
-#define deb(x) cout << '\n' \
-                    << #x << " = " << x << '\n'
+#define clr(x) memset(x, 0, sizeof(x))
+#define deb(x) std::cout << '\n' \
+                         << #x << " = " << x << '\n'
+#define sortall(x) sort(x.begin(), x.end())
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); ++it)
 #define ps(x, y) std::fixed << std::setprecision(y) << x
 #define setbits(x) __builtin_popcountll(x)
-#define zrobits(x) __builtin_ctzll(x)
+#define zerobits(x) __builtin_ctzll(x)
 #define mk(arr, n, type) type* arr = new type[n]
 
 std::mt19937_64 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
-
-inline void setup();
-inline void solve();
-
-int main(int argc, char* argv[]) {
-    setup();
-
-    ll t = 1;
-
-    // std::cin >> t;
-
-    while (t--) solve(), std::cout << '\n';
-
-    return 0;
-}
 
 inline void setup() {
     std::ios_base::sync_with_stdio(false);
@@ -91,12 +49,27 @@ inline void setup() {
 #else
 #ifndef ONLINE_JUDGE  // runs automatically for supported online judges
     freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    // freopen("output.txt", "w", stdout);
 #endif
 #endif
 }
 
+inline void solve();
+
+int main(int argc, char* argv[]) {
+    setup();
+
+    ll t = 1;
+    // std::cin >> t;
+
+    while (t--)
+        solve();
+
+    return 0;
+}
+
 using namespace std;
+//  Compile and run: g++ -g -Wshadow -Wall practice.cpp -o a.exe -Ofast -Wno-unused-result && ./a.exe
 
 inline void solve() {
 }
