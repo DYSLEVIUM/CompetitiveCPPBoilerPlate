@@ -46,6 +46,7 @@ inline void setup() {
 
 #ifdef LOCAL_PROJECT  // run with -DLOCAL_PROJECT during compilation
     freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
 #endif
 }
 
