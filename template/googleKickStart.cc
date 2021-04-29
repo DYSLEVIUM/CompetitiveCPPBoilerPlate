@@ -46,11 +46,6 @@ inline void setup() {
 
 #ifdef LOCAL_PROJECT  // run with -DLOCAL_PROJECT during compilation
     freopen("input.txt", "r", stdin);
-#else
-#ifndef ONLINE_JUDGE  // runs automatically for supported online judges
-    freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-#endif
 #endif
 }
 
@@ -73,7 +68,7 @@ int main(int argc, char* argv[]) {
 }
 
 using namespace std;
-//  Compile and run: g++ -g -Wshadow -Wall practice.cpp -o a.exe -Ofast -Wno-unused-result && ./a.exe
+//  Compile and run: g++ -g -Wshadow -Wall -DLOCAL_PROJECT practice.cpp -o a.exe -Ofast -Wno-unused-result && ./a.exe
 
 inline void solve() {
 }
