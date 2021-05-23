@@ -1,5 +1,5 @@
 #define _USE_MATH_DEFINES
-#pragma GCC optimize("Ofast,fast-math")
+#pragma GCC optimize("Ofast,fast-math,unroll-loops")
 
 #include <bits/stdc++.h>
 
