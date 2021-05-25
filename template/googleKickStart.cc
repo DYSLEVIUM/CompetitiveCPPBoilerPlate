@@ -70,7 +70,7 @@ int main(int argc, char* argv[]) {
 }
 
 using namespace std;
-//  Compile and run: g++ -g -Wshadow -Wall -DLOCAL_PROJECT practice.cpp -o a.exe -Ofast -Wno-unused-result && ./a.exe
+//  Compile and run: g++ -g -Wshadow -Wall -DLOCAL_PROJECT main.cc -o a.exe -Ofast -Wno-unused-result && ./a.exe
 
 inline void solve() {
 }
