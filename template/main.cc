@@ -12,12 +12,8 @@ inline void setup() {
     std::cout.tie(NULL);
 
 #ifdef LOCAL_PROJECT  // run with -DLOCAL_PROJECT during compilation
-    freopen("input.txt", "r", stdin);
-#else
-#ifndef ONLINE_JUDGE  // runs automatically for supported online judges
-    freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-#endif
+  freopen("input.txt", "r", stdin);
+  // freopen("output.txt", "w", stdout);
 #endif
 }
 
