@@ -1,7 +1,29 @@
 #define _USE_MATH_DEFINES
 #pragma GCC optimize("Ofast,fast-math,unroll-loops")
 
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <bitset>
+#include <chrono>
+#include <cmath>
+#include <cstring>
+#include <ctime>
+#include <deque>
+#include <functional>
+#include <iomanip>
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <map>
+#include <numeric>
+#include <queue>
+#include <random>
+#include <set>
+#include <stack>
+#include <string>
+#include <unordered_map>
+#include <unordered_set>
+#include <utility>
+#include <vector>
 
 typedef long long ll;
 typedef long double ld;
