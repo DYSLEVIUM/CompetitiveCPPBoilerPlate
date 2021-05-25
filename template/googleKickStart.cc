@@ -17,6 +17,7 @@ typedef std::map<int, int> mii;
 typedef std::priority_queue<int> pqd;
 typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 
+#define pb push_back
 #define eb emplace_back
 #define F first
 #define S second
