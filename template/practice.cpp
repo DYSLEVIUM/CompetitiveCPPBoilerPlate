@@ -27,23 +27,19 @@
 
 typedef long long ll;
 typedef long double ld;
-typedef std::pair<int, int> pii;
 typedef std::pair<long, long> pl;
-typedef std::vector<int> vi;
 typedef std::vector<ll> vl;
-typedef std::vector<pii> vpii;
 typedef std::vector<pl> vpl;
-typedef std::vector<vi> vvi;
 typedef std::vector<vl> vvl;
-typedef std::map<int, int> mii;
-typedef std::priority_queue<int> pqd;
-typedef std::priority_queue<int, vi, std::greater<int>> pqi;
+typedef std::map<ll, ll> mii;
+typedef std::priority_queue<ll> pqd;
+typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 
 #define pb push_back
 #define eb emplace_back
 #define F first
 #define S second
-#define MOD (long long)1e9 + 7
+#define MOD (ll)(1e9 + 7)
 #define PI 3.14159265358979323846
 #define INF __builtin_inff()
 
@@ -60,35 +56,35 @@ typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 #define zerobits(x) __builtin_ctzll(x)
 #define mk(arr, n, type) type* arr = new type[n]
 
-std::mt19937_64 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+std::mt19937_64 rng(
+    std::chrono::high_resolution_clock::now().time_since_epoch().count());
 
 inline void setup() {
-    std::ios_base::sync_with_stdio(false);
-    std::cin.tie(NULL);
-    std::cout.tie(NULL);
+  std::ios_base::sync_with_stdio(false);
+  std::cin.tie(NULL);
+  std::cout.tie(NULL);
 
 #ifdef LOCAL_PROJECT  // run with -DLOCAL_PROJECT during compilation
-    freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
+  freopen("input.txt", "r", stdin);
+  freopen("output.txt", "w", stdout);
 #endif
 }
 
 inline void solve();
 
 int main(int argc, char* argv[]) {
-    setup();
+  setup();
 
-    ll t = 1;
-    // std::cin >> t;
+  ll t = 1;
+  std::cin >> t;
 
-    while (t--)
-        solve();
+  while (t--) solve();
 
-    return 0;
+  return 0;
 }
 
 using namespace std;
-//  Compile and run: g++ -g -Wshadow -Wall practice.cpp -o a.exe -Ofast -Wno-unused-result && ./a.exe
+//  Compile and run: g++ -g -Wshadow -Wall practice.cpp -DLOCAL_PROJECT -o a -Ofast -Wno-unused-result && ./a
 
 inline void solve() {
 }
