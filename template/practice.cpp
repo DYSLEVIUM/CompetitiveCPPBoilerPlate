@@ -27,7 +27,7 @@
 
 typedef long long ll;
 typedef long double ld;
-typedef std::pair<long, long> pl;
+typedef std::pair<ll, ll> pl;
 typedef std::vector<ll> vl;
 typedef std::vector<pl> vpl;
 typedef std::vector<vl> vvl;
@@ -76,7 +76,7 @@ int main(int argc, char* argv[]) {
   setup();
 
   ll t = 1;
-  std::cin >> t;
+  // std::cin >> t;
 
   while (t--) solve();
 
