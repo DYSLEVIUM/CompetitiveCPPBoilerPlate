@@ -31,7 +31,7 @@ typedef std::pair<long, long> pl;
 typedef std::vector<ll> vl;
 typedef std::vector<pl> vpl;
 typedef std::vector<vl> vvl;
-typedef std::map<ll, ll> mii;
+typedef std::map<ll, ll> mll;
 typedef std::priority_queue<ll> pqd;
 typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 
