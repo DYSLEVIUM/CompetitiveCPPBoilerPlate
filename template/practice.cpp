@@ -45,7 +45,7 @@ typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 
 #define fo(i, n) for (ll i = 0; i < n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < n ? i < n : i > n; k < n ? ++i : --i)
-#define allC(x) x.begin(), x.end()
+#define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define deb(x) std::cout << '\n' \
                          << #x << " = " << x << '\n'
@@ -76,7 +76,7 @@ int main(int argc, char* argv[]) {
   setup();
 
   ll t = 1;
-  // std::cin >> t;
+  std::cin >> t;
 
   while (t--) solve();
 
