@@ -27,17 +27,13 @@
 
 typedef long long ll;
 typedef long double ld;
-typedef std::pair<int, int> pii;
-typedef std::pair<long, long> pl;
-typedef std::vector<int> vi;
+typedef std::pair<ll, ll> pl;
 typedef std::vector<ll> vl;
-typedef std::vector<pii> vpii;
 typedef std::vector<pl> vpl;
-typedef std::vector<vi> vvi;
 typedef std::vector<vl> vvl;
-typedef std::map<int, int> mii;
-typedef std::priority_queue<int> pqd;
-typedef std::priority_queue<int, vi, std::greater<int>> pqi;
+typedef std::map<ll, ll> mll;
+typedef std::priority_queue<ll> pqd;
+typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 
 #define pb push_back
 #define eb emplace_back
@@ -49,7 +45,7 @@ typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 
 #define fo(i, n) for (ll i = 0; i < n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < n ? i < n : i > n; k < n ? ++i : --i)
-#define allC(x) x.begin(), x.end()
+#define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
 #define deb(x) std::cout << '\n' \
                          << #x << " = " << x << '\n'
@@ -60,39 +56,40 @@ typedef std::priority_queue<int, vi, std::greater<int>> pqi;
 #define zerobits(x) __builtin_ctzll(x)
 #define mk(arr, n, type) type* arr = new type[n]
 
-std::mt19937_64 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+std::mt19937_64 rng(
+    std::chrono::high_resolution_clock::now().time_since_epoch().count());
 
 inline void setup() {
-    std::ios_base::sync_with_stdio(false);
-    std::cin.tie(NULL);
-    std::cout.tie(NULL);
+  std::ios_base::sync_with_stdio(false);
+  std::cin.tie(NULL);
+  std::cout.tie(NULL);
 
 #ifdef LOCAL_PROJECT  // run with -DLOCAL_PROJECT during compilation
-    freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
+  freopen("input.txt", "r", stdin);
+  freopen("output.txt", "w", stdout);
 #endif
 }
 
 inline void solve();
 
 int main(int argc, char* argv[]) {
-    setup();
+  setup();
 
-    ll t = 1;
-    std::cin >> t;
+  ll t = 1;
+  std::cin >> t;
 
-    ll tempT = t;
-    while (t--) {
-        std::cout << "Case #" << tempT - t << ": ";
-        solve();
-        std::cout << '\n';
-    }
+  ll tempT = t;
+  while (t--) {
+    std::cout << "Case #" << tempT - t << ": ";
+    solve();
+    std::cout << '\n';
+  }
 
-    return 0;
+  return 0;
 }
 
 using namespace std;
-//  Compile and run: g++ -g -Wshadow -Wall -DLOCAL_PROJECT main.cc -o a.exe -Ofast -Wno-unused-result && ./a.exe
+//  Compile and run: g++ -g -Wshadow -Wall practice.cpp -DLOCAL_PROJECT -o a -Ofast -Wno-unused-result && ./a
 
 inline void solve() {
 }
