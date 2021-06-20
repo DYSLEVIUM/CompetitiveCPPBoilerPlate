@@ -1,29 +1,11 @@
 #define _USE_MATH_DEFINES
 #pragma GCC optimize("Ofast,fast-math,unroll-loops")
 
-#include <algorithm>
-#include <bitset>
-#include <chrono>
-#include <cmath>
-#include <cstring>
-#include <ctime>
-#include <deque>
-#include <functional>
-#include <iomanip>
-#include <iostream>
-#include <iterator>
-#include <list>
-#include <map>
-#include <numeric>
-#include <queue>
-#include <random>
-#include <set>
-#include <stack>
-#include <string>
-#include <unordered_map>
-#include <unordered_set>
-#include <utility>
-#include <vector>
+#ifdef DYSLEVIUM
+#include "dyslevium.h"
+#else
+#include <bits/stdc++.h>
+#endif
 
 typedef long long ll;
 typedef long double ld;
@@ -46,7 +28,6 @@ typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 #define Fo(i, k, n) for (ll i = k; k < n ? i < n : i > n; k < n ? ++i : --i)
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
-#define sortall(x) sort(x.begin(), x.end())
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); ++it)
 #define ps(x, y) std::fixed << std::setprecision(y) << x
 #define setbits(x) __builtin_popcountll(x)
@@ -57,8 +38,7 @@ std::mt19937_64 rng(std::chrono::high_resolution_clock::now().time_since_epoch()
 
 //  debuging
 #ifdef DYSLEVIUM
-#define deb(x) std::cerr << '\n' \
-                         << #x << " = " << x << '\n'
+#define deb(x) std::cerr << #x << " = " << x << '\n'
 #else
 #define deb(x)
 #endif
@@ -70,9 +50,9 @@ inline void setup() {
   std::cout.tie(NULL);
 
 #ifdef DYSLEVIUM
-  freopen("input.txt", "r", stdin);
-  freopen("output.txt", "w", stdout);
-  freopen("error.txt", "w", stderr);
+  freopen("input.in", "r", stdin);
+  freopen("output.out", "w", stdout);
+  freopen("error.err", "w", stderr);
 #endif
 }
 
@@ -95,6 +75,7 @@ int main(int argc, char* argv[]) {
 }
 
 using namespace std;
+
 //  Compile and run: g++ -std=c++17 -g -Wshadow -Wall main.cc -D DYSLEVIUM -o a -Ofast -Wno-unused-result && ./a
 
 inline void solve() {
