@@ -95,7 +95,7 @@ int main(int argc, char* argv[]) {
 }
 
 using namespace std;
-//  Compile and run: g++ -std=c++17 -g -Wshadow -Wall practice.cpp -D DYSLEVIUM -o a -Ofast -Wno-unused-result && ./a
+//  Compile and run: g++ -std=c++17 -g -Wshadow -Wall main.cc -D DYSLEVIUM -o a -Ofast -Wno-unused-result && ./a
 
 inline void solve() {
 }
