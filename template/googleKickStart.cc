@@ -41,14 +41,11 @@ typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 #define S second
 #define MOD (ll)(1e9 + 7)
 #define PI 3.14159265358979323846
-#define INF __builtin_inff()
 
 #define fo(i, n) for (ll i = 0; i < n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < n ? i < n : i > n; k < n ? ++i : --i)
 #define all(x) x.begin(), x.end()
 #define clr(x) memset(x, 0, sizeof(x))
-#define deb(x) std::cout << '\n' \
-                         << #x << " = " << x << '\n'
 #define sortall(x) sort(x.begin(), x.end())
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); ++it)
 #define ps(x, y) std::fixed << std::setprecision(y) << x
@@ -56,17 +53,26 @@ typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 #define zerobits(x) __builtin_ctzll(x)
 #define mk(arr, n, type) type* arr = new type[n]
 
-std::mt19937_64 rng(
-    std::chrono::high_resolution_clock::now().time_since_epoch().count());
+std::mt19937_64 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 
+//  debuging
+#ifdef DYSLEVIUM
+#define deb(x) std::cerr << '\n' \
+                         << #x << " = " << x << '\n'
+#else
+#define deb(x)
+#endif
+
+//  initial setup
 inline void setup() {
   std::ios_base::sync_with_stdio(false);
   std::cin.tie(NULL);
   std::cout.tie(NULL);
 
-#ifdef LOCAL_PROJECT  // run with -DLOCAL_PROJECT during compilation
+#ifdef DYSLEVIUM
   freopen("input.txt", "r", stdin);
   freopen("output.txt", "w", stdout);
+  freopen("error.txt", "w", stderr);
 #endif
 }
 
@@ -89,7 +95,7 @@ int main(int argc, char* argv[]) {
 }
 
 using namespace std;
-//  Compile and run: g++ -g -Wshadow -Wall practice.cpp -DLOCAL_PROJECT -o a -Ofast -Wno-unused-result && ./a
+//  Compile and run: g++ -g -Wshadow -Wall practice.cpp -DDYSLEVIUM-o a -Ofast -Wno-unused-result && ./a
 
 inline void solve() {
 }
