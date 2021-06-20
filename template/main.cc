@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
-//  Compile and run: g++ -g -Wshadow -Wall practice.cpp -DDYSLEVIUM-o a -Ofast -Wno-unused-result && ./a
+//  Compile and run: g++ -std=c++17 -g -Wshadow -Wall practice.cpp -D DYSLEVIUM -o a -Ofast -Wno-unused-result && ./a
 
 using namespace std;
 
