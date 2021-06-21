@@ -24,15 +24,13 @@ typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 #define MOD (ll)(1e9 + 7)
 #define PI 3.14159265358979323846
 
-#define fo(i, n) for (ll i = 0; i < n; ++i)
-#define Fo(i, k, n) for (ll i = k; k < n ? i < n : i > n; k < n ? ++i : --i)
+#define fo(i, n) for (ll i = 0; i < (ll)n; ++i)
+#define Fo(i, k, n) for (ll i = k; k < (ll)n ? i < (ll)n : i > (ll)n; k < (ll)n ? ++i : --i)
 #define all(x) x.begin(), x.end()
-#define clr(x) memset(x, 0, sizeof(x))
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); ++it)
 #define ps(x, y) std::fixed << std::setprecision(y) << x
 #define setbits(x) __builtin_popcountll(x)
 #define zerobits(x) __builtin_ctzll(x)
-#define mk(arr, n, type) type* arr = new type[n]
 
 std::mt19937_64 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 
