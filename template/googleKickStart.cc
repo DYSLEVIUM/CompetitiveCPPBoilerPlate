@@ -19,10 +19,7 @@ typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 
 #define pb push_back
 #define eb emplace_back
-#define F first
-#define S second
 #define MOD (ll)(1e9 + 7)
-#define PI 3.14159265358979323846
 
 #define fo(i, n) for (ll i = 0; i < (ll)n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < (ll)n ? i < (ll)n : i > (ll)n; k < (ll)n ? ++i : --i)
