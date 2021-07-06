@@ -41,8 +41,8 @@ std::mt19937_64 rng(std::chrono::high_resolution_clock::now().time_since_epoch()
 //  initial setup
 inline void setup() {
   std::ios_base::sync_with_stdio(false);
-  std::cin.tie(NULL);
-  std::cout.tie(NULL);
+  std::cin.tie(nullptr);
+  std::cout.tie(nullptr);
 
 #ifdef DYSLEVIUM
   freopen("input.in", "r", stdin);
