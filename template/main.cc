@@ -96,7 +96,7 @@ int main(int argc, char* argv[]) {
   auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
 
 #ifdef DYSLEVIUM
-  std::cerr << "Time: " << duration.count();
+  std::cerr << "\nTime: " << duration.count();
 #endif
 
   return 0;
