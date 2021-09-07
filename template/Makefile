@@ -7,6 +7,7 @@ run: reqFiles a
 a: dyslevium.h.gch main.cc
 	g++ -std=$(cppVersion) -g -Wshadow -Wall main.cc -D DYSLEVIUM -o a -Ofast -Wno-unused-result
 
+#	precompiling all required headers in custom header
 dyslevium.h.gch: dyslevium.h
 	g++ -std=$(cppVersion) dyslevium.h
 
