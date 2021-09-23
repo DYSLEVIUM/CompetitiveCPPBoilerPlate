@@ -1,11 +1,11 @@
 tempObjects = input.in output.out error.err
 cppVersion = c++17
 
-run: reqFiles a
-	./a
+run: reqFiles a.exe
+	./a.exe
 
-a: dyslevium.h.gch main.cc
-	g++ -std=$(cppVersion) -g -Wshadow -Wall main.cc -D DYSLEVIUM -o a -Ofast -Wno-unused-result
+a.exe: dyslevium.h.gch main.cc
+	g++ -std=$(cppVersion) -g -Wshadow -Wall main.cc -D DYSLEVIUM -o a.exe -Ofast -Wno-unused-result
 
 #	precompiling all required headers in custom header
 dyslevium.h.gch: dyslevium.h
@@ -15,4 +15,4 @@ reqFiles:
 	touch $(tempObjects)
 
 clean:
-	rm a dyslevium.h.gch $(tempObjects)
+	rm a.exe dyslevium.h.gch $(tempObjects)
