@@ -5,6 +5,9 @@
 #include "dyslevium.h"
 #else
 #include <bits/stdc++.h>
+
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 #endif
 
 typedef long long ll;
@@ -23,11 +26,13 @@ typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 #define S second
 #define MOD (ll)(1e9 + 7)
 
-std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+std::mt19937_64 RNG(
+    std::chrono::high_resolution_clock::now().time_since_epoch().count());
 
 //  macro functions
 #define fo(i, n) for (ll i = 0; i < (ll)n; ++i)
-#define Fo(i, k, n) for (ll i = k; k < (ll)n ? i < (ll)n : i > (ll)n; k < (ll)n ? ++i : --i)
+#define Fo(i, k, n) \
+  for (ll i = k; k < (ll)n ? i < (ll)n : i > (ll)n; k < (ll)n ? ++i : --i)
 #define all(x) x.begin(), x.end()
 #define tr(it, a) for (auto it = a.begin(); it != a.end(); ++it)
 #define ps(x, y) std::fixed << std::setprecision(y) << x
@@ -38,6 +43,8 @@ std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch()
 #define modMul(a, b) ((((a % MOD) * (b % MOD)) % MOD) + MOD) % MOD
 
 //  template functions
+template <typename T>
+using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
 template <typename T>
 inline T gcd(const T& a, const T& b) {
   if (b) return gcd(b, a % b);
@@ -54,9 +61,13 @@ inline T binPowIter(T x, T n) {
   return res % MOD;
 }
 template <typename T>
-inline T modInverse(const T& a) { return binPowIter(a, MOD - 2); }
+inline T modInverse(const T& a) {
+  return binPowIter(a, MOD - 2);
+}
 template <typename T>
-inline T modDiv(const T& a, const T& b) { return (modMul(a, modInverse(b)) + MOD) % MOD; }
+inline T modDiv(const T& a, const T& b) {
+  return (modMul(a, modInverse(b)) + MOD) % MOD;
+}
 
 //  debuging
 #ifdef DYSLEVIUM
@@ -87,13 +98,14 @@ int main(int argc, char* argv[]) {
   auto startTime = std::chrono::high_resolution_clock::now();
 
   ll t = 1;
-  // std::cin >> t;
+  std::cin >> t;
 
   while (t--) solve();
 
   auto endTime = std::chrono::high_resolution_clock::now();
 
-  auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
+  auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(
+      endTime - startTime);
 
 #ifdef DYSLEVIUM
   std::cerr << "\nTime: " << duration.count();
