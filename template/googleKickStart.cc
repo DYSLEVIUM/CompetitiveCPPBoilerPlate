@@ -5,6 +5,9 @@
 #include "dyslevium.h"
 #else
 #include <bits/stdc++.h>
+
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 #endif
 
 typedef long long ll;
@@ -38,6 +41,8 @@ std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch()
 #define modMul(a, b) ((((a % MOD) * (b % MOD)) % MOD) + MOD) % MOD
 
 //  template functions
+template <typename T>
+using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
 template <typename T>
 inline T gcd(const T& a, const T& b) {
   if (b) return gcd(b, a % b);
