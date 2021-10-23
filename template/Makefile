@@ -1,5 +1,5 @@
 tempObjects = input.in output.out error.err
-cppVersion = c++17
+cppVersion = c++20
 
 run: reqFiles a.exe
 	./a.exe
