@@ -42,13 +42,12 @@ std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch()
 #define modMul(a, b) ((((a % MOD) * (b % MOD)) % MOD) + MOD) % MOD
 
 // template functions
-template <typename T>
-using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
+template <typename T>using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
 template <typename T>inline T gcd(const T& a, const T& b) {if (b) return gcd(b, a % b);return a;}
 template <typename T>inline T binPowIter(T x, T n) {T res = 1;while (n) {if (n & 1) res *= x;x *= x;n >>= 1;}return res;}
 template <typename T>inline T binPowIterM(T x, T n) {T res = 1;while (n) {if (n & 1) res = modMul(res, x);x = modMul(x, x);n >>= 1;}return res % MOD;}
 template <typename T>inline T modInverse(const T& a) {return binPowIter(a, MOD - 2);}
-template <typename T> inline T modDiv(const T& a, const T& b) {return (modMul(a, modInverse(b)) + MOD) % MOD;}
+template <typename T>inline T modDiv(const T& a, const T& b) {return (modMul(a, modInverse(b)) + MOD) % MOD;}
 
 // debuging
 #ifdef DYSLEVIUM
