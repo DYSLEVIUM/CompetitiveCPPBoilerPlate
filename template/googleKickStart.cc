@@ -20,15 +20,16 @@ typedef std::map<ll, ll> mll;
 typedef std::priority_queue<ll> pqd;
 typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 
+// clang-format off
 #define pb push_back
 #define eb emplace_back
 #define F first
 #define S second
 #define MOD (ll)(1e9 + 7)
 
-std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());  // generator for shuffle and other generator which require random numbers
 
-//  macro functions
+// macro functions
 #define fo(i, n) for (ll i = 0; i < (ll)n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < (ll)n ? i < (ll)n : i > (ll)n; k < (ll)n ? ++i : --i)
 #define all(x) x.begin(), x.end()
@@ -40,49 +41,33 @@ std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch()
 #define modSub(a, b) ((((a % MOD) - (b % MOD)) % MOD) + MOD) % MOD
 #define modMul(a, b) ((((a % MOD) * (b % MOD)) % MOD) + MOD) % MOD
 
-//  template functions
+// template functions
 template <typename T>
 using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
-template <typename T>
-inline T gcd(const T& a, const T& b) {
-  if (b) return gcd(b, a % b);
-  return a;
-}
-template <typename T>
-inline T binPowIter(T x, T n) {
-  T res = 1;
-  while (n) {
-    if (n & 1) res = modMul(res, x);
-    x = modMul(x, x);
-    n >>= 1;
-  }
-  return res % MOD;
-}
-template <typename T>
-inline T modInverse(const T& a) { return binPowIter(a, MOD - 2); }
-template <typename T>
-inline T modDiv(const T& a, const T& b) { return (modMul(a, modInverse(b)) + MOD) % MOD; }
+template <typename T>inline T gcd(const T& a, const T& b) {if (b) return gcd(b, a % b);return a;}
+template <typename T>inline T binPowIter(T x, T n) {T res = 1;while (n) {if (n & 1) res *= x;x *= x;n >>= 1;}return res;}
+template <typename T>inline T binPowIterM(T x, T n) {T res = 1;while (n) {if (n & 1) res = modMul(res, x);x = modMul(x, x);n >>= 1;}return res % MOD;}
+template <typename T>inline T modInverse(const T& a) {return binPowIter(a, MOD - 2);}
+template <typename T> inline T modDiv(const T& a, const T& b) {return (modMul(a, modInverse(b)) + MOD) % MOD;}
 
-//  debuging
+// debuging
 #ifdef DYSLEVIUM
 #define deb(x) std::cerr << #x << " = " << x << '\n'
 #else
 #define deb(x)
 #endif
 
-//  initial setup
+// initial setup
 inline void setup() {
   std::ios_base::sync_with_stdio(false);
   std::cin.tie(nullptr);
 
-#ifdef DYSLEVIUM
-  freopen("input.in", "r", stdin);
-  freopen("output.out", "w", stdout);
-  freopen("error.err", "w", stderr);
-#endif
+  #ifdef DYSLEVIUM
+    freopen("input.in", "r", stdin);
+    freopen("output.out", "w", stdout);
+    freopen("error.err", "w", stderr);
+  #endif
 }
-
-inline void solve();
 
 int main(int argc, char* argv[]) {
   setup();
@@ -103,16 +88,17 @@ int main(int argc, char* argv[]) {
 
   auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
 
-#ifdef DYSLEVIUM
-  std::cerr << "\nTime: " << duration.count();
-#endif
+  #ifdef DYSLEVIUM
+    std::cerr << "\nTime: " << duration.count();
+  #endif
 
   return 0;
 }
 
 using namespace std;
 
-//  Compile and run: g++ -std=c++17 -g -Wshadow -Wall main.cc -D DYSLEVIUM -o a.exe -Ofast -Wno-unused-result && ./a.exe
+// Compile and run: g++ -std=c++17 -g -Wshadow -Wall main.cc -D DYSLEVIUM -o a.exe -Ofast -Wno-unused-result && ./a.exe
 
+// clang-format on
 inline void solve() {
 }
