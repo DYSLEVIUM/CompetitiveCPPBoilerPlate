@@ -16,7 +16,7 @@ typedef std::pair<ll, ll> pl;
 typedef std::vector<ll> vl;
 typedef std::vector<pl> vpl;
 typedef std::vector<vl> vvl;
-typedef std::map<ll, ll> mll;
+typedef std::unordered_map<ll, ll> mll;
 typedef std::priority_queue<ll> pqd;
 typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 
