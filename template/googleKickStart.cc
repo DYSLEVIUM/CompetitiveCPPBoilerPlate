@@ -26,6 +26,7 @@ typedef std::priority_queue<ll, vl, std::greater<ll>> pqi;
 #define F first
 #define S second
 #define MOD (ll)(1e9 + 7)
+#define PI 3.14159265358979323846
 
 std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());  // generator for shuffle and other generator which require random numbers
 
