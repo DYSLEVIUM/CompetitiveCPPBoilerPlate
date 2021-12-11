@@ -38,9 +38,9 @@ std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch()
 #define ps(x, y) std::fixed << std::setprecision(y) << x
 #define setbits(x) __builtin_popcountll(x)
 #define zerobits(x) __builtin_ctzll(x)
-#define modAdd(a, b) ((((a % MOD) + (b % MOD)) % MOD) + MOD) % MOD
-#define modSub(a, b) ((((a % MOD) - (b % MOD)) % MOD) + MOD) % MOD
-#define modMul(a, b) ((((a % MOD) * (b % MOD)) % MOD) + MOD) % MOD
+#define mod_add(a, b) ((((a % MOD) + (b % MOD)) % MOD) + MOD) % MOD
+#define mod_sub(a, b) ((((a % MOD) - (b % MOD)) % MOD) + MOD) % MOD
+#define mod_mul(a, b) ((((a % MOD) * (b % MOD)) % MOD) + MOD) % MOD
 
 // template functions
 template <typename T>using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
