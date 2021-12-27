@@ -126,8 +126,4 @@ using namespace std;
 // clang-format on
 
 inline void solve() {
-  ll n;
-  cin >> n;
-
-  cout << n << '\n';
 }
