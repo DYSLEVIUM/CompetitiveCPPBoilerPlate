@@ -39,10 +39,10 @@ using vpl = std::vector<pl>;
 using mll = std::unordered_map<ll, ll, custom_hash>;
 
 //  constants
-constexpr ll INF = 2e18;
-constexpr ll EPS = 1e-9;
-constexpr ll MOD = 1e9 + 7;  //  998244853
-constexpr ld PI = 3.14159265358979323846;
+constexpr ll INF{2e18};
+constexpr ll EPS{1e-9};
+constexpr ll MOD{1e9 + 7};  //  998244853
+constexpr ld PI{3.14159265358979323846};
 
 // clang-format off
 
@@ -126,4 +126,8 @@ using namespace std;
 // clang-format on
 
 inline void solve() {
+  ll n;
+  cin >> n;
+
+  cout << n << '\n';
 }
