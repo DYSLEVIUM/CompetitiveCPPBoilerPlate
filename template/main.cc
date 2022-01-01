@@ -46,9 +46,9 @@ constexpr ld PI(3.14159265358979323846);
 
 // clang-format off
 
-template <typename T> constexpr T mod_add(T a, T b) { return ((((a % MOD) + (b % MOD)) % MOD) + MOD) % MOD; }
-template <typename T> constexpr T mod_sub(T a, T b) { return ((((a % MOD) - (b % MOD)) % MOD) + MOD) % MOD; }
-template <typename T> constexpr T mod_mul(T a, T b) { return ((((a % MOD) * (b % MOD)) % MOD) + MOD) % MOD; };
+template <typename T> constexpr T mod_add(const T& a, const T&  b, const T& mod) { return ((((a % mod) + (b % mod)) % mod) + mod) % mod; }
+template <typename T> constexpr T mod_sub(const T& a, const T&  b, const T& mod) { return ((((a % mod) - (b % mod)) % mod) + mod) % mod; }
+template <typename T> constexpr T mod_mul(const T& a, const T&  b, const T& mod) { return ((((a % mod) * (b % mod)) % mod) + mod) % mod; };
 
 //  macros
 #define pb push_back
@@ -65,9 +65,9 @@ template <typename T> constexpr T mod_mul(T a, T b) { return ((((a % MOD) * (b %
 // template functions
 template <typename T> using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
 template <typename T> inline T bin_pow(T x, T n) {T res = 1; while (n) { if (n & 1) res *= x; x *= x; n >>= 1; } return res; }
-template <typename T> inline T bin_pow_m(T x, T n) {T res = 1; while (n) { if (n & 1) res = modMul(res, x); x = modMul(x, x); n >>= 1; }return res % MOD; }
-template <typename T> inline T mod_inverse(const T& a) { return binPowIter(a, MOD - 2); }
-template <typename T> inline T mod_div(const T& a, const T& b) { return (modMul(a, modInverse(b)) + MOD) % MOD; }
+template <typename T> inline T bin_pow_m(T x, T n, const T& mod) {T res = 1; while (n) { if (n & 1) res = mod_mul(res, x, mod); x = mod_mul(x, x, mod); n >>= 1; } return res % mod; }
+template <typename T> inline T mod_inverse(const T& a, const T& mod) { return bin_pow(a, mod - 2, mod); }
+template <typename T> inline T mod_div(const T& a, const T& b, const T& mod) { return (mod_mul(a, mod_inverse(b, mod), mod) + mod) % mod; }
 
 //  operator overloading
 template<typename T> std::istream& operator>>(std::istream &istream, std::vector<T> &v){ for (auto &it : v) std::cin >> it; return istream; }
