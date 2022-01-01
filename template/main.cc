@@ -121,7 +121,7 @@ int main(int argc, char* argv[]) {
 
 using namespace std;
 
-// Compile and run: g++ -std=c++17 -g -Wshadow -Wall main.cc -D DYSLEVIUM -o a.exe -Ofast -Wno-unused-result && ./a.exe
+// Compile and run: g++ -std=c++20 -g -Wshadow -Wall main.cc -D DYSLEVIUM -o a.exe -Ofast -Wno-unused-result && ./a.exe
 
 // clang-format on
 
