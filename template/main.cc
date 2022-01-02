@@ -105,7 +105,7 @@ int main(int argc, char* argv[]) {
   while (t--) {
     solve();
     #ifdef DYSLEVIUM
-      std::cout << "\n----------\n" ;
+      std::cout << "----------\n" ;
     #endif
   }
 
