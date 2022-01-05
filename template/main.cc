@@ -13,6 +13,8 @@
 #endif
 
 //  custom functions
+std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());  // generator for shuffle and other generator which require random numbers
+
 class custom_hash {
  public:
   static uint64_t splitmix64(uint64_t x) {
@@ -23,12 +25,10 @@ class custom_hash {
   }
 
   size_t operator()(uint64_t x) const {
-    static const uint64_t FIXED_RANDOM = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+    static const uint64_t FIXED_RANDOM = RNG();
     return splitmix64(x + FIXED_RANDOM);
   }
 };
-
-std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());  // generator for shuffle and other generator which require random numbers
 
 //  aliases
 using ll = long long;
@@ -41,13 +41,13 @@ using mll = __gnu_pbds::gp_hash_table<ll, ll, custom_hash>;
 //  constants
 constexpr ll INF(2e18);
 constexpr ld EPS(1e-9);
-constexpr ll MOD(1e9 + 7);  //  998244853
+constexpr ll MOD(1e9 + 7);  //  or (119 << 23) + 1; primitive_root = 3; // = 998244353
 constexpr ld PI(3.14159265358979323846);
 
 // clang-format off
 
-template <typename T> constexpr T mod_add(const T& a, const T&  b, const T& mod) { return ((((a % mod) + (b % mod)) % mod) + mod) % mod; }
-template <typename T> constexpr T mod_sub(const T& a, const T&  b, const T& mod) { return ((((a % mod) - (b % mod)) % mod) + mod) % mod; }
+template <typename T> constexpr T mod_add(const T& a, const T&  b, const T& mod) { return a + b > mod ? a + b - mod : (a + b); }
+template <typename T> constexpr T mod_sub(const T& a, const T&  b, const T& mod) { return a - b < 0 ? a - b + mod : (a - b); }
 template <typename T> constexpr T mod_mul(const T& a, const T&  b, const T& mod) { return ((((a % mod) * (b % mod)) % mod) + mod) % mod; };
 
 //  macros
@@ -66,7 +66,7 @@ template <typename T> constexpr T mod_mul(const T& a, const T&  b, const T& mod)
 template <typename T> using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
 template <typename T> inline T bin_pow(T x, T n) {T res = 1; while (n) { if (n & 1) res *= x; x *= x; n >>= 1; } return res; }
 template <typename T> inline T bin_pow_m(T x, T n, const T& mod) {T res = 1; while (n) { if (n & 1) res = mod_mul(res, x, mod); x = mod_mul(x, x, mod); n >>= 1; } return res % mod; }
-template <typename T> inline T mod_inverse(const T& a, const T& mod) { return bin_pow(a, mod - 2, mod); }
+template <typename T> inline T mod_inverse(const T& a, const T& mod) { return bin_pow_m(a, mod - 2, mod); }
 template <typename T> inline T mod_div(const T& a, const T& b, const T& mod) { return (mod_mul(a, mod_inverse(b, mod), mod) + mod) % mod; }
 
 //  operator overloading
