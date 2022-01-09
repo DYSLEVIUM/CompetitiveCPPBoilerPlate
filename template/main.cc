@@ -67,7 +67,7 @@ template <typename T> using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_t
 template <typename T> inline T bin_pow(T x, T n) {T res = 1; while (n) { if (n & 1) res *= x; x *= x; n >>= 1; } return res; }
 template <typename T> inline T bin_pow_m(T x, T n, const T& mod) {T res = 1; while (n) { if (n & 1) res = mod_mul(res, x, mod); x = mod_mul(x, x, mod); n >>= 1; } return res % mod; }
 template <typename T> inline T mod_inverse(const T& a, const T& mod) { return bin_pow_m(a, mod - 2, mod); }
-template <typename T> inline T mod_div(const T& a, const T& b, const T& mod) { return (mod_mul(a, mod_inverse(b, mod), mod) + mod) % mod; }
+template <typename T> inline T mod_div(const T& a, const T& b, const T& mod) { return mod_mul(a, mod_inverse(b, mod), mod); }
 
 //  operator overloading
 template<typename T> std::istream& operator>>(std::istream &istream, std::vector<T> &v){ for (auto &it : v) std::cin >> it; return istream; }
@@ -100,14 +100,9 @@ int main(int argc, char* argv[]) {
   auto startTime = std::chrono::high_resolution_clock::now();
 
   ll t = 1;
-  std::cin >> t;
+  // std::cin >> t;
 
-  while (t--) {
-    solve();
-    #ifdef DYSLEVIUM
-      std::cout << "----------\n" ;
-    #endif
-  }
+  while (t--) solve();
 
   auto endTime = std::chrono::high_resolution_clock::now();
   auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
