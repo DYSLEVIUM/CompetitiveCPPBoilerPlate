@@ -35,6 +35,7 @@ using ll = long long;
 using ld = long double;
 using pl = std::pair<ll, ll>;
 using vl = std::vector<ll>;
+using vvl = std::vector<vl>;
 using vpl = std::vector<pl>;
 using mll = __gnu_pbds::gp_hash_table<ll, ll, custom_hash>;
 
