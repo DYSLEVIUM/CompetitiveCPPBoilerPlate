@@ -1,4 +1,3 @@
-// pragmas
 #pragma GCC optimize("Ofast,fast-math,unroll-loops")
 #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 
@@ -11,6 +10,8 @@
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 #endif
+
+// clang-format off
 
 //  custom functions
 std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());  // generator for shuffle and other generator which require random numbers
@@ -37,19 +38,14 @@ using pl = std::pair<ll, ll>;
 using vl = std::vector<ll>;
 using vvl = std::vector<vl>;
 using vpl = std::vector<pl>;
-using mll = __gnu_pbds::gp_hash_table<ll, ll, custom_hash>;
+using mll = __gnu_pbds::gp_hash_table<ll, ll, custom_hash>; //  4x - 10x faster than stl unordered_map
+template <typename T> using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
 
 //  constants
 constexpr ll INF(2e18);
 constexpr ld EPS(1e-9);
 constexpr ll MOD(1e9 + 7);  //  or (119 << 23) + 1; primitive_root = 3; // = 998244353
 constexpr ld PI(3.14159265358979323846);
-
-// clang-format off
-
-template <typename T> constexpr T mod_add(const T& a, const T&  b, const T& mod) { return a + b > mod ? a + b - mod : (a + b); }
-template <typename T> constexpr T mod_sub(const T& a, const T&  b, const T& mod) { return a - b < 0 ? a - b + mod : (a - b); }
-template <typename T> constexpr T mod_mul(const T& a, const T&  b, const T& mod) { return ((((a % mod) * (b % mod)) % mod) + mod) % mod; };
 
 //  macros
 #define pb push_back
@@ -58,13 +54,14 @@ template <typename T> constexpr T mod_mul(const T& a, const T&  b, const T& mod)
 #define fo(i, n) for (ll i = 0; i < (ll)n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < (ll)n ? i < (ll)n : i > (ll)n; k < (ll)n ? ++i : --i)
 #define all(x) x.begin(), x.end()
-#define tr(it, a) for (auto& it : a)
 #define ps(x, y) std::fixed << std::setprecision(y) << x
 #define set_bits(x) __builtin_popcountll(x)
 #define zero_bits(x) __builtin_ctzll(x)
 
 // template functions
-template <typename T> using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
+template <typename T> inline T mod_add(const T& a, const T&  b, const T& mod) { return a + b > mod ? a + b - mod : (a + b); }
+template <typename T> inline T mod_sub(const T& a, const T&  b, const T& mod) { return a - b < 0 ? a - b + mod : (a - b); }
+template <typename T> inline T mod_mul(const T& a, const T&  b, const T& mod) { return ((((a % mod) * (b % mod)) % mod) + mod) % mod; };
 template <typename T> inline T bin_pow(T x, T n) {T res = 1; while (n) { if (n & 1) res *= x; x *= x; n >>= 1; } return res; }
 template <typename T> inline T bin_pow_m(T x, T n, const T& mod) {T res = 1; while (n) { if (n & 1) res = mod_mul(res, x, mod); x = mod_mul(x, x, mod); n >>= 1; } return res % mod; }
 template <typename T> inline T mod_inverse(const T& a, const T& mod) { return bin_pow_m(a, mod - 2, mod); }
@@ -97,11 +94,11 @@ inline void solve();
 
 int main(int argc, char* argv[]) {
   setup();
-
+  
   auto startTime = std::chrono::high_resolution_clock::now();
 
   ll t = 1;
-  // std::cin >> t;
+  std::cin >> t;
 
   while (t--) solve();
 
