@@ -15,7 +15,8 @@
 
 //  custom functions
 std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());  // generator for shuffle and other generator which require random numbers
-
+// modified custom hash to used with templates from https://codeforces.com/blog/entry/62393  
+template<typename T>
 class custom_hash {
  public:
   static uint64_t splitmix64(uint64_t x) {
@@ -25,9 +26,9 @@ class custom_hash {
     return x ^ (x >> 31);
   }
 
-  size_t operator()(uint64_t x) const {
+  size_t operator()(T x) const {
     static const uint64_t FIXED_RANDOM = RNG();
-    return splitmix64(x + FIXED_RANDOM);
+    return splitmix64(std::hash<T>()(x) + FIXED_RANDOM);
   }
 };
 
@@ -38,8 +39,8 @@ using pl = std::pair<ll, ll>;
 using vl = std::vector<ll>;
 using vvl = std::vector<vl>;
 using vpl = std::vector<pl>;
-using mll = __gnu_pbds::gp_hash_table<ll, ll, custom_hash>; //  4x - 10x faster than stl unordered_map
-template <typename T> using ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
+template <typename key, typename value> using pbds_map = __gnu_pbds::gp_hash_table<key, value, custom_hash<key>>; //  4x - 10x faster than stl unordered_map
+template <typename T> using pbds_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
 
 //  constants
 constexpr ll INF(2e18);
@@ -98,7 +99,7 @@ int main(int argc, char* argv[]) {
   auto startTime = std::chrono::high_resolution_clock::now();
 
   ll t = 1;
-  std::cin >> t;
+  // std::cin >> t;
 
   while (t--) solve();
 
