@@ -12,6 +12,13 @@ class Vector2d {
     return this->x * vec.x + this->y * vec.y;
   }
 
+  T area(const Vector2d<T>& vec_1, const Vector2d<T>& vec_2) const {
+    //  vector w.r.t this
+    Vector2d<T> vec_t_1 = vec_1 - *this, vec_t_2 = vec_2 - *this;
+    return vec_t_1.get_y() * vec_t_2.get_x() -
+           vec_t_2.get_y() * vec_t_1.get_x();
+  }
+
   T normalize() const { return this->dot(*this); }
 
   ld absolute() const { return sqrt(this->normalize()); }
