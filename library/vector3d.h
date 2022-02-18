@@ -3,7 +3,7 @@ class Vector3d {
   T x, y, z;
 
  public:
-  explicit Vector3d(T xx = 0, T yy = 0, T zz = 0) : x(xx), y(yy), z(zz) {}
+  explicit Vector3d(T _x = 0, T _y = 0, T _z = 0) : x(_x), y(_y), z(_z) {}
 
   T get_x() const { return this->x; }
   T get_y() const { return this->y; }
@@ -60,7 +60,7 @@ class Vector3d {
   }
 
   bool operator!=(const Vector3d<T>& vec) const {
-    return this->x != vec.x || this->y != vec.y || this->z != vec.z;
+    return !(this == vec);
   }
 
   Vector3d<T> operator+(const Vector3d<T>& vec) const {
