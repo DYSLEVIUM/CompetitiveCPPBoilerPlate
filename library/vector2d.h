@@ -3,7 +3,7 @@ class Vector2d {
   T x, y;
 
  public:
-  explicit Vector2d(T xx = 0, T yy = 0) : x(xx), y(yy) {}
+  explicit Vector2d(T _x = 0, T _y = 0) : x(_x), y(_y) {}
 
   T get_x() const { return this->x; }
   T get_y() const { return this->y; }
@@ -56,7 +56,7 @@ class Vector2d {
   }
 
   bool operator!=(const Vector2d<T>& vec) const {
-    return this->x != vec.x || this->y != vec.y;
+    return !(this == vec);
   }
 
   Vector2d<T> operator+(const Vector2d<T>& vec) const {
