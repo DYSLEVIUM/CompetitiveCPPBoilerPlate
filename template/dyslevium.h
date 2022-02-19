@@ -1,19 +1,18 @@
-#ifndef DYSLEVIUM_H
-#define DYSLEVIUM_H
+#pragma once
+
+#include <math.h>
+#include <time.h>
 
 #include <algorithm>
 #include <bitset>
 #include <chrono>
-#include <climits>
-#include <cmath>
 #include <complex>
-#include <cstring>
-#include <ctime>
 #include <deque>
 #include <functional>
 #include <iomanip>
 #include <iostream>
 #include <iterator>
+#include <limits>
 #include <list>
 #include <map>
 #include <numeric>
@@ -22,6 +21,7 @@
 #include <set>
 #include <stack>
 #include <string>
+#include <thread>
 #include <unordered_map>
 #include <unordered_set>
 #include <utility>
@@ -30,4 +30,3 @@
 //  pdbs
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
-#endif
