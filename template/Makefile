@@ -1,23 +1,21 @@
-tempObjects = input.in output.out error.err
-cppVersion = c++20
+cpp_version = c++20
+src_file = main.cc
+executable = main.exe
 
-run: reqFiles a.exe
-	./a.exe
+run: $(executable)
+	./$(executable) < input.in > output.out 2> error.err
 
-a.exe: dyslevium.h.gch main.cc
-	g++ -std=$(cppVersion) -g -Wshadow -Wall main.cc -D DYSLEVIUM -o a.exe -Ofast -Wno-unused-result
+$(executable): dyslevium.h.gch $(src_file)
+	g++ -std=$(cpp_version) -g -Wshadow -Wall $(src_file) -D DYSLEVIUM -o $(executable) -Ofast -Wno-unused-result
 
 #	precompiling all required headers in custom header
 dyslevium.h.gch: dyslevium.h
-	g++ -std=$(cppVersion) dyslevium.h
+	g++ -std=$(cpp_version) dyslevium.h
 
-reqFiles:
-	touch $(tempObjects)
-
-format: main.cc
-	cp main.cc main.cc.bak
-	clang-format main.cc.bak > main.cc
-	rm main.cc.bak
+format: $(src_file)
+	cp $(src_file) $(src_file).bak
+	clang-format $(src_file).bak > $(src_file)
+	rm $(src_file).bak
 
 clean:
-	rm a.exe dyslevium.h.gch $(tempObjects)
+	rm $(executable) dyslevium.h.gch
