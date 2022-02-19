@@ -6,11 +6,11 @@ run: $(executable)
 	./$(executable) < input.in > output.out 2> error.err
 
 $(executable): dyslevium.h.gch $(src_file)
-	g++ -std=$(cpp_version) -g -Wshadow -Wall $(src_file) -D DYSLEVIUM -o $(executable) -Ofast -Wno-unused-result
+	g++ -std=$(cpp_version) -g -Wshadow -Wall -H $(src_file) -D DYSLEVIUM -o $(executable) -Ofast -Wno-unused-result
 
 #	precompiling all required headers in custom header
-dyslevium.h.gch: dyslevium.h
-	g++ -std=$(cpp_version) dyslevium.h
+dyslevium.h.gch: 
+	g++ -std=$(cpp_version) -H -x c++-header -o dyslevium.h.gch -c dyslevium.h
 
 format: $(src_file)
 	cp $(src_file) $(src_file).bak
