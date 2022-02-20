@@ -39,7 +39,7 @@ using pl = std::pair<ll, ll>;
 using vl = std::vector<ll>;
 using vvl = std::vector<vl>;
 using vpl = std::vector<pl>;
-template <typename key, typename value> using pbds_map = __gnu_pbds::gp_hash_table<key, value, custom_hash<key>>; //  4x - 10x faster than stl unordered_map
+template <typename key, typename value> using pbds_unordered_map = __gnu_pbds::gp_hash_table<key, value, custom_hash<key>>; //  4x - 10x faster than stl unordered_map
 template <typename T> using pbds_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
  
 //  constants
