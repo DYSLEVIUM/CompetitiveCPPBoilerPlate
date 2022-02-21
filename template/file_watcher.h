@@ -52,13 +52,14 @@ class File_Watcher {
 
       //  modified
       if (can_run_on_edit) {
-        for (const auto& file : files_last_write_time_prev_) {
+        for (auto& file : files_last_write_time_prev_) {
           const auto& file_path = file.first;
           auto last_write_time_prev = file.second;
           auto file_last_write_time =
               std::filesystem::last_write_time(file_path);
           if (file_last_write_time != last_write_time_prev) {
-            last_write_time_prev = file_last_write_time;
+            file.second = file_last_write_time;
+            std::cout << file_path << " was modified." << std::endl;
             on_edit();
           }
         }
