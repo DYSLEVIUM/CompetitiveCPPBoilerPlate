@@ -8,7 +8,7 @@ int main(int argc, char* argv[]) {
   File_Watcher main_file(files, delay);
   auto commands = [] {
     system("clear");
-    system("make run");
+    system("time make run");
   };
 
   main_file.watch(commands);
