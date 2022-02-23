@@ -88,6 +88,5 @@
 		"variant": "cpp"
 	},
 	"C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Google}",
-	"editor.fontSize": 20,
 	"C_Cpp.suggestSnippets": false
 }
