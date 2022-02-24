@@ -25,4 +25,4 @@ format: $(src_file)
 	rm $(src_file).bak
 
 clean:
-	rm $(watch_executable) $(executable) dyslevium.h.gch
+	rm $(watch_executable) $(executable) output.out error.err dyslevium.h.gch
