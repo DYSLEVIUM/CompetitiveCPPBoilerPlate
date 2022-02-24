@@ -71,6 +71,9 @@ template <typename T> inline T mod_div(const T& a, const T& b, const T& mod) { r
 template<typename T> std::istream& operator>>(std::istream &is, std::vector<T> &v){ for (auto &it : v) is >> it; return is; }
 template<typename T> std::ostream& operator<<(std::ostream &os, const std::vector<T> &v) { for (auto &it : v) os << it << ' '; return os; }
 
+template<typename T_1, typename T_2> std::istream& operator>>(std::istream &is, std::pair<T_1, T_2> &p){ is >> p.first >> p.second; return is; }
+template<typename T_1, typename T_2> std::ostream& operator<<(std::ostream &os, const std::pair<T_1, T_2> &p) { os << p.first << ' ' << p.second; return os; }
+
 // debuging
 #ifdef DYSLEVIUM
   #define deb(x) std::cerr << #x << " = " << x << '\n'
