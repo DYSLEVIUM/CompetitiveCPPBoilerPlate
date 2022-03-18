@@ -1,7 +1,7 @@
 /*
   DYSLEVIUM's template
-  Date: 23/February/2022
-  Time: 17:28:22
+  Date: 18/March/2022
+  Time: 11:58:24
 */
 
 // headers
@@ -54,9 +54,16 @@ constexpr long long MOD(1e9 + 7);  //  or (119 << 23) + 1; primitive_root = 3; /
 constexpr long double PI(3.14159265358979323846);
 
 // macros
+#define pb push_back
+#define F first
+#define S second
+#define fo(i, n) for (ll i = 0; i < (ll)n; ++i)
+#define Fo(i, k, n) for (ll i = k; k < (ll)n ? i < (ll)n : i > (ll)n; k < (ll)n ? ++i : --i)
+#define all(x) x.begin(), x.end()
 #define ps(x, y) std::fixed << std::setprecision(y) << x
 #define set_bits(x) __builtin_popcountll(x)
 #define zero_bits(x) __builtin_ctzll(x)
+#define mk(arr, n, type) type* arr = new type[n]
 
 // template functions
 template <typename T> inline T mod_add(const T& a, const T&  b, const T& mod) { return a + b > mod ? a + b - mod : (a + b); }
@@ -94,7 +101,7 @@ int main(int argc, char* argv[]) {
   auto startTime = std::chrono::high_resolution_clock::now();
 
   ll t = 1;
-  std::cin >> t;
+  // std::cin >> t;
 
   while (t--) solve();
 
@@ -111,4 +118,5 @@ int main(int argc, char* argv[]) {
 using namespace std;
 
 // clang-format on
-inline void solve() {}
+inline void solve() {
+}
