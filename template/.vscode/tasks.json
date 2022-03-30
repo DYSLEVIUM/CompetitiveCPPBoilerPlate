@@ -5,6 +5,7 @@
 			"type": "process",
 			"label": "Makefile",
 			"command": "make",
+			"args": ["run"],
 			"options": {
 				"cwd": "${fileDirname}"
 			},
