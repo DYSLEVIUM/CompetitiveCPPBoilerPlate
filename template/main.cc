@@ -21,7 +21,7 @@
 // clang-format off
 // custom functions
 std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());	// generator for shuffle and other generator which require random numbers
-// modified custom hash to used with templates from https://codeforces.com/blog/entry/62393
+// modified custom hash to be used with templates from https://codeforces.com/blog/entry/62393
 template<typename T>
 class custom_hash {
  public:
