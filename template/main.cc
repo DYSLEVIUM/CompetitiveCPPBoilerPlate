@@ -1,7 +1,7 @@
 /*
   DYSLEVIUM's template
-  Date: 18/March/2022
-  Time: 11:58:24
+  Date: 26/September/2022
+  Time: 02:19:57
 */
 
 // headers
@@ -23,8 +23,7 @@
 std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());	// generator for shuffle and other generator which require random numbers
 // modified custom hash to be used with templates from https://codeforces.com/blog/entry/62393
 template<typename T>
-class custom_hash {
- public:
+struct custom_hash {
   static uint64_t splitmix64(uint64_t x) {
     x += 0x9e3779b97f4a7c15;
     x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
@@ -59,6 +58,7 @@ constexpr long double PI(3.14159265358979323846);
 #define S second
 #define fo(i, n) for (ll i = 0; i < (ll)n; ++i)
 #define Fo(i, k, n) for (ll i = k; k < (ll)n ? i < (ll)n : i > (ll)n; k < (ll)n ? ++i : --i)
+#define tr(it, cont) for (auto it = cont.begin(); it != cont.end(); ++it)
 #define all(x) x.begin(), x.end()
 #define ps(x, y) std::fixed << std::setprecision(y) << x
 #define set_bits(x) __builtin_popcountll(x)
@@ -118,5 +118,4 @@ int main(int argc, char* argv[]) {
 using namespace std;
 
 // clang-format on
-inline void solve() {
-}
+inline void solve() {}
