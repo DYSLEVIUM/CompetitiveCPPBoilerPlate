@@ -119,6 +119,7 @@ using namespace std;
 
 // clang-format on
 inline void solve() {
+  // ncr = (n-1)cr + (n-1)c(r-1)
   vvl comb(10, vl(10));
   Fo(n, 1, maxn) {
     comb[n][0] = comb[n][n] = 1;
