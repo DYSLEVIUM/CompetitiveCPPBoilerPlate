@@ -64,6 +64,8 @@ constexpr long double PI(3.14159265358979323846);
 #define set_bits(x) __builtin_popcountll(x)
 #define zero_bits(x) __builtin_ctzll(x)
 #define mk(arr, n, type) type* arr = new type[n]
+#define low(ch) char(ch | ' ')
+#define upp(ch) char(ch & '_')
 
 // template functions
 template <typename T> inline T mod_add(const T& a, const T&  b, const T& mod) { return a + b > mod ? a + b - mod : (a + b); }
