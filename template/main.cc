@@ -86,9 +86,9 @@ template<typename T_1, typename T_2> std::ostream& operator<<(std::ostream &os, 
 
 // debuging
 #ifdef DYSLEVIUM
-  #define deb(x) std::cerr << #x << " = " << x << '\n';
+  #define deb(x) std::cerr << #x << " = " << x << '\n'
 #else
-  #define deb(x) ;
+  #define deb(x)
 #endif
 
 inline void solve();
