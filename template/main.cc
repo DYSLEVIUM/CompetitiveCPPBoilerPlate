@@ -1,7 +1,7 @@
 /*
   DYSLEVIUM's template
-  Date: 26/September/2022
-  Time: 02:19:57
+  Date: 21/October/2022
+  Time: 09:50:14
 */
 
 // headers
@@ -20,7 +20,7 @@
 
 // clang-format off
 // custom functions
-std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());	// generator for shuffle and other generator which require random numbers
+std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());  // generator for shuffle and other generator which require random numbers
 // modified custom hash to be used with templates from https://codeforces.com/blog/entry/62393
 template<typename T>
 struct custom_hash {
@@ -48,9 +48,10 @@ template <typename key, typename value> using pbds_unordered_map = __gnu_pbds::g
 template <typename T> using pbds_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>; // find_by_order, order_of_key
 
 // constants
-constexpr long double EPS(1e-9);
-constexpr long long MOD(1e9 + 7);  //  or (119 << 23) + 1; primitive_root = 3; // = 998244353
-constexpr long double PI(3.14159265358979323846);
+static constexpr long double EPS(1e-9);
+static constexpr long long MOD(1e9 + 7);  //  or (119 << 23) + 1; primitive_root = 3; // = 998244353
+static constexpr long long INF(0x3f3f3f3f3f3f3f3f);
+static constexpr long double PI(3.14159265358979323846);
 
 // macros
 #define pb push_back
@@ -64,9 +65,9 @@ constexpr long double PI(3.14159265358979323846);
 #define set_bits(x) __builtin_popcountll(x)
 #define zero_bits(x) __builtin_ctzll(x)
 #define mk(arr, n, type) type* arr = new type[n]
-#define low(ch) char(ch | ' ')
-#define upp(ch) char(ch & '_')
 
+#define low(x) char(x | ' ')
+#define upp(x) char(x & '_')
 // template functions
 template <typename T> inline T mod_add(const T& a, const T&  b, const T& mod) { return a + b > mod ? a + b - mod : (a + b); }
 template <typename T> inline T mod_sub(const T& a, const T&  b, const T& mod) { return a - b < 0 ? a - b + mod : (a - b); }
@@ -85,9 +86,9 @@ template<typename T_1, typename T_2> std::ostream& operator<<(std::ostream &os, 
 
 // debuging
 #ifdef DYSLEVIUM
-  #define deb(x) std::cerr << #x << " = " << x << '\n'
+  #define deb(x) std::cerr << #x << " = " << x << '\n';
 #else
-  #define deb(x)
+  #define deb(x) ;
 #endif
 
 inline void solve();
@@ -103,7 +104,7 @@ int main(int argc, char* argv[]) {
   auto startTime = std::chrono::high_resolution_clock::now();
 
   ll t = 1;
-  // std::cin >> t;
+  std::cin >> t;
 
   while (t--) solve();
 
@@ -120,4 +121,5 @@ int main(int argc, char* argv[]) {
 using namespace std;
 
 // clang-format on
-inline void solve() {}
+inline void solve() {
+}
