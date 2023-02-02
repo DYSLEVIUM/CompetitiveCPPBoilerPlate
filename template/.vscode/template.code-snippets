@@ -109,7 +109,7 @@
       "\tauto endTime = std::chrono::high_resolution_clock::now();",
       "\tauto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);\n",
       "\t#ifdef DYSLEVIUM",
-      "\t\tstd::cerr << \"Time: \" << duration.count();",
+      "\t\tstd::cerr << \"\\nTime: \" << duration.count();",
       "\t#endif\n",
       "\treturn 0;",
       "}\n",
