@@ -1,7 +1,7 @@
 /*
   DYSLEVIUM's template
-  Date: 21/October/2022
-  Time: 09:50:14
+  Date: 02/February/2023
+  Time: 16:55:12
 */
 
 // headers
@@ -20,7 +20,7 @@
 
 // clang-format off
 // custom functions
-std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());  // generator for shuffle and other generator which require random numbers
+std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());	// generator for shuffle and other generator which require random numbers
 // modified custom hash to be used with templates from https://codeforces.com/blog/entry/62393
 template<typename T>
 struct custom_hash {
@@ -65,9 +65,9 @@ static constexpr long double PI(3.14159265358979323846);
 #define set_bits(x) __builtin_popcountll(x)
 #define zero_bits(x) __builtin_ctzll(x)
 #define mk(arr, n, type) type* arr = new type[n]
-
 #define low(x) char(x | ' ')
 #define upp(x) char(x & '_')
+
 // template functions
 template <typename T> inline T mod_add(const T& a, const T&  b, const T& mod) { return a + b > mod ? a + b - mod : (a + b); }
 template <typename T> inline T mod_sub(const T& a, const T&  b, const T& mod) { return a - b < 0 ? a - b + mod : (a - b); }
@@ -112,7 +112,7 @@ int main(int argc, char* argv[]) {
   auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
 
   #ifdef DYSLEVIUM
-    std::cerr << "Time: " << duration.count();
+    std::cerr << "\nTime: " << duration.count();
   #endif
 
   return 0;
@@ -122,4 +122,5 @@ using namespace std;
 
 // clang-format on
 inline void solve() {
+  
 }
