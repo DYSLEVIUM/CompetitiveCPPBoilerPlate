@@ -1,7 +1,7 @@
 /*
   DYSLEVIUM's template
   Date: 02/February/2023
-  Time: 16:55:12
+  Time: 17:13:16
 */
 
 // headers
@@ -94,8 +94,8 @@ template<typename T_1, typename T_2> std::ostream& operator<<(std::ostream &os, 
 inline void solve();
 
 inline void setup(){
-  std::ios_base::sync_with_stdio(false);
-  std::cin.tie(nullptr);
+  // std::ios_base::sync_with_stdio(false);
+  std::cin.tie(nullptr)->sync_with_stdio(false);
 }
 
 int main(int argc, char* argv[]) {
@@ -121,6 +121,4 @@ int main(int argc, char* argv[]) {
 using namespace std;
 
 // clang-format on
-inline void solve() {
-  
-}
+inline void solve() {}
