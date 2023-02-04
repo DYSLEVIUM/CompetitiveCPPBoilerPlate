@@ -55,6 +55,7 @@ static constexpr long double PI(3.14159265358979323846);
 
 // macros
 #define pb push_back
+#define eb emplace_back
 #define F first
 #define S second
 #define fo(i, n) for (ll i = 0; i < (ll)n; ++i)
