@@ -67,7 +67,8 @@ static constexpr long double PI(3.14159265358979323846);
 #define zero_bits(x) __builtin_ctzll(x)
 #define mk(arr, n, type) type* arr = new type[n]
 #define low(x) char(x | ' ')
-#define upp(x) char(x & '_')
+// #define upp(x) char(x & '_')
+#define upp(x) char(x & ~' ')
 #define sz(x) x.size()
 
 // template functions
