@@ -87,7 +87,7 @@ template<typename T> std::ostream& operator<<(std::ostream &os, const std::vecto
 template<typename T_1, typename T_2> std::istream& operator>>(std::istream &is, std::pair<T_1, T_2> &p){ is >> p.first >> p.second; return is; }
 template<typename T_1, typename T_2> std::ostream& operator<<(std::ostream &os, const std::pair<T_1, T_2> &p) { os << p.first << ' ' << p.second; return os; }
 
-// debuging
+// debugging
 #ifdef DYSLEVIUM
   #define deb(x) std::cerr << #x << " = " << x << '\n'
 #else
