@@ -1,7 +1,7 @@
 /*
     DYSLEVIUM's template
     Date: 13/September/2024
-    Time: 17:39:06
+    Time: 18:34:51
 */
 
 // headers
@@ -105,7 +105,7 @@ int main(int argc, char* argv[]) {
     auto startTime = std::chrono::high_resolution_clock::now();
 
     ll t = 1;
-    std::cin >> t;
+    // std::cin >> t;
 
     while (t--) solve();
 
@@ -127,6 +127,4 @@ int main(int argc, char* argv[]) {
 using namespace std;
 
 // clang-format on
-inline void solve() {
-    
-}
+inline void solve() {}
