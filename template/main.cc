@@ -1,29 +1,30 @@
 /*
     DYSLEVIUM's template
     Date: 18/September/2024
-    Time: 13:30:55
+    Time: 14:49:12
 */
+
+// clang-format off
 
 // headers
 #ifdef DYSLEVIUM
-#include "dyslevium.h"
+    #include "dyslevium.h"
 #else
-// optimizations done at compile time
-#pragma GCC optimize("Ofast,fast-math,unroll-loops")
-#pragma GCC target("avx,avx2,fma,bmi,bmi2,lzcnt,popcnt")
+    // optimizations done at compile time
+    #pragma GCC optimize("Ofast,fast-math,unroll-loops")
+    #pragma GCC target("avx,avx2,fma,bmi,bmi2,lzcnt,popcnt")
 
-#include <bits/stdc++.h>
+    #include <bits/stdc++.h>
 
-// #include <ext/pb_ds/assoc_container.hpp>
-// #include <ext/pb_ds/tree_policy.hpp>
-
+    #include <ext/pb_ds/assoc_container.hpp>
+    #include <ext/pb_ds/tree_policy.hpp>
 #endif
 
-// clang-format off
 // custom functions
 std::mt19937_64 RNG(std::chrono::high_resolution_clock::now().time_since_epoch().count());	// generator for shuffle and other generator which require random numbers
+
 // modified custom hash to be used with templates from https://codeforces.com/blog/entry/62393
-template<typename T>
+template <typename T>
 struct custom_hash {
     static uint64_t splitmix64(uint64_t x) {
         x += 0x9e3779b97f4a7c15;
@@ -46,6 +47,13 @@ using vl = std::vector<ll>;
 using vvl = std::vector<vl>;
 using vpl = std::vector<pl>;
 
+#ifndef DYSLEVIUM
+    template <typename T>
+    using pbds_ordered_set = __gnu_pbds::tree<T, __gnu_pbds::null_type, std::less<T>, __gnu_pbds::rb_tree_tag, __gnu_pbds::tree_order_statistics_node_update>;  // find_by_order, order_of_key
+
+    template <typename T1, typename T2>
+    using pbds_unordered_map = __gnu_pbds::gp_hash_table<T1, T2, custom_hash<T1>>; // 4x - 10x faster than stl unordered_map
+#endif
 // constants
 static constexpr long double EPS(1e-9);
 static constexpr long long MOD(1e9 + 7);  //  or (119 << 23) + 1; primitive_root = 3; // = 998244353
@@ -80,11 +88,11 @@ template <typename T> inline T mod_inverse(const T& a, const T& mod = MOD) { ret
 template <typename T> inline T mod_div(const T& a, const T& b, const T& mod = MOD) { return mod_mul(a, mod_inverse(b, mod), mod); }
 
 // operator overloading
-template<typename T> std::istream& operator>>(std::istream &is, std::vector<T> &v){ for (auto &it : v) is >> it; return is; }
-template<typename T> std::ostream& operator<<(std::ostream &os, const std::vector<T> &v) { for (const auto &it : v) os << it << ' '; return os; }
+template <typename T> std::istream& operator>>(std::istream &is, std::vector<T> &v){ for (auto &it : v) is >> it; return is; }
+template <typename T> std::ostream& operator<<(std::ostream &os, const std::vector<T> &v) { for (const auto &it : v) os << it << ' '; return os; }
 
-template<typename T_1, typename T_2> std::istream& operator>>(std::istream &is, std::pair<T_1, T_2> &p){ is >> p.first >> p.second; return is; }
-template<typename T_1, typename T_2> std::ostream& operator<<(std::ostream &os, const std::pair<T_1, T_2> &p) { os << p.first << ' ' << p.second; return os; }
+template <typename T1, typename T2> std::istream& operator>>(std::istream &is, std::pair<T1, T2> &p){ is >> p.first >> p.second; return is; }
+template <typename T1, typename T2> std::ostream& operator<<(std::ostream &os, const std::pair<T1, T2> &p) { os << p.first << ' ' << p.second; return os; }
 
 // debugging
 #ifdef DYSLEVIUM
@@ -98,6 +106,12 @@ inline void solve();
 inline void setup(){
     // std::ios_base::sync_with_stdio(false);
     std::cin.tie(nullptr)->sync_with_stdio(false);
+
+    #ifndef ONLINE_JUDGE  // runs automatically for supported online judges
+        freopen("input.in", "r", stdin);
+        freopen("output.out", "w", stdout);
+        freopen("error.err", "w", stderr);
+    #endif
 }
 
 int main(int argc, char* argv[]) {
@@ -115,11 +129,6 @@ int main(int argc, char* argv[]) {
 
     #ifdef DYSLEVIUM
         std::cerr << "\nTime: " << duration.count() << "ms";
-    #else
-    #ifndef ONLINE_JUDGE  // runs automatically for supported online judges
-        freopen("input.txt", "r", stdin);
-        // freopen("output.txt", "w", stdout);
-    #endif
     #endif
 
     return 0;
@@ -128,6 +137,7 @@ int main(int argc, char* argv[]) {
 using namespace std;
 
 // clang-format on
-inline void solve() {
 
+inline void solve() {
+    
 }
