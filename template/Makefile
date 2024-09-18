@@ -1,6 +1,6 @@
 cpp_version = c++20
 src_file = main.cc
-executable = main.exe
+executable = main
 includes = /opt/homebrew/Cellar/gcc/12.2.0/include/c++/12
 
 OS := $(shell uname)
