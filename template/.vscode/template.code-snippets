@@ -54,7 +54,7 @@
       "using pl = std::pair<ll, ll>;",
       "using vl = std::vector<ll>;",
       "using vvl = std::vector<vl>;",
-      "using vpl = std::vector<pl>;",
+      "using vpl = std::vector<pl>;\n",
       "$LINE_COMMENT constants",
       "static constexpr long double EPS(1e-9);",
       "static constexpr long long MOD(1e9 + 7);  //  or (119 << 23) + 1; primitive_root = 3; // = 998244353",
