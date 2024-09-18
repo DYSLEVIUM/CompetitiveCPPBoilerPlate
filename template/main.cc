@@ -1,7 +1,7 @@
 /*
     DYSLEVIUM's template
-    Date: 13/September/2024
-    Time: 20:39:26
+    Date: 18/September/2024
+    Time: 13:30:55
 */
 
 // headers
@@ -45,6 +45,7 @@ using pl = std::pair<ll, ll>;
 using vl = std::vector<ll>;
 using vvl = std::vector<vl>;
 using vpl = std::vector<pl>;
+
 // constants
 static constexpr long double EPS(1e-9);
 static constexpr long long MOD(1e9 + 7);  //  or (119 << 23) + 1; primitive_root = 3; // = 998244353
@@ -113,7 +114,7 @@ int main(int argc, char* argv[]) {
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
 
     #ifdef DYSLEVIUM
-        std::cerr << "\nTime: " << duration.count();
+        std::cerr << "\nTime: " << duration.count() << "ms";
     #else
     #ifndef ONLINE_JUDGE  // runs automatically for supported online judges
         freopen("input.txt", "r", stdin);
@@ -128,5 +129,5 @@ using namespace std;
 
 // clang-format on
 inline void solve() {
-    
+
 }
