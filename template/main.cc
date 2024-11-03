@@ -78,13 +78,13 @@ static const constexpr long double PI(3.14159265358979323846);
 #define sz(x) x.size()
 
 // template functions
-template <typename T> inline T mod_add(const T& a, const T&  b, const T& mod = MOD) { return a + b >= mod ? a + b - mod : a + b; }
-template <typename T> inline T mod_sub(const T& a, const T&  b, const T& mod = MOD) { return a - b < 0 ? mod_add(a - b, mod) : a - b; }
-template <typename T> inline T mod_mul(const T& a, const T&  b, const T& mod = MOD) { return ((((a % mod) * (b % mod)) % mod) + mod) % mod; };
-template <typename T> inline T bin_pow(T x, T n) {T res = 1; while (n) { if (n & 1) res *= x; x *= x; n >>= 1; } return res; }
-template <typename T> inline T bin_pow_m(T x, T n, const T& mod = MOD) {T res = 1; while (n) { if (n & 1) res = mod_mul(res, x, mod); x = mod_mul(x, x, mod); n >>= 1; } return res % mod; }
-template <typename T> inline T mod_inverse(const T& a, const T& mod = MOD) { return bin_pow_m(a, mod - 2, mod); }
-template <typename T> inline T mod_div(const T& a, const T& b, const T& mod = MOD) { return mod_mul(a, mod_inverse(b, mod), mod); }
+template <typename T> inline constexpr T mod_add(const T& a, const T&  b, const T& mod = MOD) { return a + b >= mod ? a + b - mod : a + b; }
+template <typename T> inline constexpr T mod_sub(const T& a, const T&  b, const T& mod = MOD) { return a - b < 0 ? mod_add(a - b, mod) : a - b; }
+template <typename T> inline constexpr T mod_mul(const T& a, const T&  b, const T& mod = MOD) { return ((((a % mod) * (b % mod)) % mod) + mod) % mod; };
+template <typename T> inline constexpr T bin_pow(T x, T n) {T res = 1; while (n) { if (n & 1) res *= x; x *= x; n >>= 1; } return res; }
+template <typename T> inline constexpr T bin_pow_m(T x, T n, const T& mod = MOD) {T res = 1; while (n) { if (n & 1) res = mod_mul(res, x, mod); x = mod_mul(x, x, mod); n >>= 1; } return res % mod; }
+template <typename T> inline constexpr T mod_inverse(const T& a, const T& mod = MOD) { return bin_pow_m(a, mod - 2, mod); }
+template <typename T> inline constexpr T mod_div(const T& a, const T& b, const T& mod = MOD) { return mod_mul(a, mod_inverse(b, mod), mod); }
 
 // operator overloading
 template <typename T> std::istream& operator>>(std::istream &is, std::vector<T> &v) { for (auto &it : v) is >> it; return is; }
