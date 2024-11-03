@@ -1,7 +1,7 @@
 /*
     DYSLEVIUM's template
-    Date: 18/September/2024
-    Time: 14:49:12
+    Date: 27/September/2024
+    Time: 04:30:10
 */
 
 // clang-format off
@@ -55,10 +55,10 @@ using vpl = std::vector<pl>;
     using pbds_unordered_map = __gnu_pbds::gp_hash_table<T1, T2, custom_hash<T1>>; // 4x - 10x faster than stl unordered_map
 #endif
 // constants
-static constexpr long double EPS(1e-9);
-static constexpr long long MOD(1e9 + 7);  //  or (119 << 23) + 1; primitive_root = 3; // = 998244353
-static constexpr long long INF(0x3f3f3f3f3f3f3f3f);
-static constexpr long double PI(3.14159265358979323846);
+constexpr long double EPS(1e-9);
+constexpr int MOD(1e9 + 7);  //  or (119 << 23) + 1; primitive_root = 3; // = 998244353
+constexpr long long INF(0x3f3f3f3f3f3f3f3f);
+constexpr long double PI(3.14159265358979323846);
 
 // macros
 #define pb push_back
@@ -88,10 +88,10 @@ template <typename T> inline T mod_inverse(const T& a, const T& mod = MOD) { ret
 template <typename T> inline T mod_div(const T& a, const T& b, const T& mod = MOD) { return mod_mul(a, mod_inverse(b, mod), mod); }
 
 // operator overloading
-template <typename T> std::istream& operator>>(std::istream &is, std::vector<T> &v){ for (auto &it : v) is >> it; return is; }
+template <typename T> std::istream& operator>>(std::istream &is, std::vector<T> &v) { for (auto &it : v) is >> it; return is; }
 template <typename T> std::ostream& operator<<(std::ostream &os, const std::vector<T> &v) { for (const auto &it : v) os << it << ' '; return os; }
 
-template <typename T1, typename T2> std::istream& operator>>(std::istream &is, std::pair<T1, T2> &p){ is >> p.first >> p.second; return is; }
+template <typename T1, typename T2> std::istream& operator>>(std::istream &is, std::pair<T1, T2> &p) { is >> p.first >> p.second; return is; }
 template <typename T1, typename T2> std::ostream& operator<<(std::ostream &os, const std::pair<T1, T2> &p) { os << p.first << ' ' << p.second; return os; }
 
 // debugging
@@ -120,7 +120,7 @@ int main(int argc, char* argv[]) {
     auto startTime = std::chrono::high_resolution_clock::now();
 
     ll t = 1;
-    // std::cin >> t;
+    std::cin >> t;
 
     while (t--) solve();
 
@@ -139,5 +139,4 @@ using namespace std;
 // clang-format on
 
 inline void solve() {
-    
 }
