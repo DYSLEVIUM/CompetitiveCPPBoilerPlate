@@ -1,7 +1,7 @@
 /*
     DYSLEVIUM's template
-    Date: 27/September/2024
-    Time: 04:30:10
+    Date: 03/November/2024
+    Time: 22:54:50
 */
 
 // clang-format off
@@ -55,10 +55,10 @@ using vpl = std::vector<pl>;
     using pbds_unordered_map = __gnu_pbds::gp_hash_table<T1, T2, custom_hash<T1>>; // 4x - 10x faster than stl unordered_map
 #endif
 // constants
-constexpr long double EPS(1e-9);
-constexpr int MOD(1e9 + 7);  //  or (119 << 23) + 1; primitive_root = 3; // = 998244353
-constexpr long long INF(0x3f3f3f3f3f3f3f3f);
-constexpr long double PI(3.14159265358979323846);
+static const constexpr long double EPS(1e-9);
+static const constexpr int MOD(1e9 + 7);  //  or (119 << 23) + 1; primitive_root = 3; // = 998244353
+static const constexpr long long INF(0x3f3f3f3f3f3f3f3f);
+static const constexpr long double PI(3.14159265358979323846);
 
 // macros
 #define pb push_back
@@ -74,7 +74,6 @@ constexpr long double PI(3.14159265358979323846);
 #define zero_bits(x) __builtin_ctzll(x)
 #define mk(arr, n, type) type* arr = new type[n]
 #define low(x) char(x | ' ')
-// #define upp(x) char(x & '_')
 #define upp(x) char(x & '_')
 #define sz(x) x.size()
 
@@ -120,7 +119,7 @@ int main(int argc, char* argv[]) {
     auto startTime = std::chrono::high_resolution_clock::now();
 
     ll t = 1;
-    std::cin >> t;
+    // std::cin >> t;
 
     while (t--) solve();
 
@@ -138,5 +137,4 @@ using namespace std;
 
 // clang-format on
 
-inline void solve() {
-}
+inline void solve() {}
