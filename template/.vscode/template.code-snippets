@@ -80,7 +80,6 @@
       "#define zero_bits(x) __builtin_ctzll(x)",
       "#define mk(arr, n, type) type* arr = new type[n]",
       "#define low(x) char(x | ' ')",
-      "$LINE_COMMENT #define upp(x) char(x & '_')",
       "#define upp(x) char(x & '_')",
       "#define sz(x) x.size()\n",
       "$LINE_COMMENT template functions",
