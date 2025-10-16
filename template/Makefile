@@ -1,3 +1,5 @@
+.PHONY: run format clean
+
 cpp_version = c++20
 src_file = main.cc
 executable = main
@@ -13,8 +15,8 @@ endif
 run: $(executable)
 	./$(executable) < input.in > output.out 2> error.err
 
-$(executable): dyslevium.h.gch $(src_file)
-	g++ -I $(includes) -I $(includes_apple) -std=$(cpp_version) -Wshadow -Wall -H $(src_file) -D DYSLEVIUM -o $(executable) -Wno-unused-result
+$(executable): $(src_file) dyslevium.h.gch
+	g++ -I $(includes) -I $(includes_apple) -std=$(cpp_version) -Wshadow -Wall -H -include dyslevium.h -D DYSLEVIUM -o $(executable) -Wno-unused-result $(src_file)
 
 #	precompiling all required headers in custom header
 dyslevium.h.gch: dyslevium.h
@@ -26,4 +28,4 @@ format: $(src_file)
 	rm $(src_file).bak
 
 clean:
-	rm $(executable) output.out error.err dyslevium.h.gch
+	rm -f $(executable) output.out error.err dyslevium.h.gch
