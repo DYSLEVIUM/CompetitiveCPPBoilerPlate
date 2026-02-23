@@ -12,7 +12,7 @@
 #else
     // optimizations done at compile time
     #pragma GCC optimize("Ofast,fast-math,unroll-loops")
-    #pragma GCC target("avx,avx2,fma,bmi,bmi2,lzcnt,popcnt")
+    // #pragma GCC target("avx,avx2,fma,bmi,bmi2,lzcnt,popcnt")
 
     #include <bits/stdc++.h>
 
@@ -120,7 +120,7 @@ int main(int argc, char* argv[]) {
     auto startTime = std::chrono::high_resolution_clock::now();
 
     ll t = 1;
-    // std::cin >> t;
+    std::cin >> t;
 
     while (t--) solve();
 
@@ -138,4 +138,31 @@ using namespace std;
 
 // clang-format on
 
-inline void solve() {}
+inline void solve() {
+    ll n, q;
+    cin >> n >> q;
+
+    vl a(n);
+    cin >> a;
+
+    vl b(n);
+    cin >> b;
+
+    vl res(n + 1);
+
+    // cmp from b
+    Fo(i, 1, n + 1) { res[i] = max(b[i - 1], a[i - 1]); }
+
+    // cmp from a
+    Fo(i, 1, n) { res[i] = max(res[i], res[i + 1]); }
+
+    // prefix
+    Fo(i, 1, n + 1) { res[i] += res[i - 1]; }
+    while (q--) {
+        ll l, r;
+        cin >> l >> r;
+
+        cout << res[r] - res[l - 1] << ' ';
+    }
+    cout << '\n';
+}

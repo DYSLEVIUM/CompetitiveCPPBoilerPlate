@@ -27,7 +27,7 @@
       "#else",
       "\t$LINE_COMMENT optimizations done at compile time",
       "\t#pragma GCC optimize(\"Ofast,fast-math,unroll-loops\")",
-      "\t#pragma GCC target(\"avx,avx2,fma,bmi,bmi2,lzcnt,popcnt\")\n",
+      "\t$LINE_COMMENT #pragma GCC target(\"avx,avx2,fma,bmi,bmi2,lzcnt,popcnt\")\n",
       "\t#include <bits/stdc++.h>\n",
       "\t#include <ext/pb_ds/assoc_container.hpp>",
       "\t#include <ext/pb_ds/tree_policy.hpp>",
