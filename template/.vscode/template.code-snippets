@@ -75,6 +75,7 @@
       "#define Fo(i, k, n) for (ll i = k; k < (ll)n ? i < (ll)n : i > (ll)n; k < (ll)n ? ++i : --i)",
       "#define tr(it, cont) for (auto it = cont.begin(); it != cont.end(); ++it)",
       "#define all(x) x.begin(), x.end()",
+      "#define rall(x) x.rbegin(), x.rend()",
       "#define ps(x) std::fixed << std::setprecision(x)",
       "#define set_bits(x) __builtin_popcountll(x)",
       "#define zero_bits(x) __builtin_ctzll(x)",

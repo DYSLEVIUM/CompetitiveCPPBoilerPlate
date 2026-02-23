@@ -1,7 +1,7 @@
 /*
     DYSLEVIUM's template
-    Date: 03/November/2024
-    Time: 22:54:50
+    Date: 24/February/2026
+    Time: 03:15:55
 */
 
 // clang-format off
@@ -69,6 +69,7 @@ static const constexpr long double PI(3.14159265358979323846);
 #define Fo(i, k, n) for (ll i = k; k < (ll)n ? i < (ll)n : i > (ll)n; k < (ll)n ? ++i : --i)
 #define tr(it, cont) for (auto it = cont.begin(); it != cont.end(); ++it)
 #define all(x) x.begin(), x.end()
+#define rall(x) x.rbegin(), x.rend()
 #define ps(x) std::fixed << std::setprecision(x)
 #define set_bits(x) __builtin_popcountll(x)
 #define zero_bits(x) __builtin_ctzll(x)

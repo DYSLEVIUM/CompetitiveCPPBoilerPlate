@@ -13,7 +13,7 @@ includes_apple =
 endif
 
 run: $(executable)
-	./$(executable) < input.in > output.out 2> error.err
+	timeout 2s ./$(executable) < input.in > output.out 2> error.err
 
 $(executable): $(src_file) dyslevium.h.gch
 	g++ -I $(includes) -I $(includes_apple) -std=$(cpp_version) -Wshadow -Wall -H -include dyslevium.h -D DYSLEVIUM -o $(executable) -Wno-unused-result $(src_file)
