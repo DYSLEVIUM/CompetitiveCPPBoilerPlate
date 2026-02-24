@@ -1,7 +1,7 @@
 /*
     DYSLEVIUM's template
-    Date: 24/February/2026
-    Time: 22:02:50
+    Date: 25/February/2026
+    Time: 02:35:23
 */
 
 // clang-format off
@@ -130,7 +130,7 @@ int main(int argc, char* argv[]) {
     auto startTime = std::chrono::high_resolution_clock::now();
 
     ll t = 1;
-    // std::cin >> t;
+    std::cin >> t;
 
     while (t--) solve();
 
