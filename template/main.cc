@@ -1,7 +1,7 @@
 /*
     DYSLEVIUM's template
     Date: 24/February/2026
-    Time: 03:15:55
+    Time: 22:02:50
 */
 
 // clang-format off
@@ -88,17 +88,27 @@ template <typename T> inline constexpr T mod_inverse(const T& a, const T& mod = 
 template <typename T> inline constexpr T mod_div(const T& a, const T& b, const T& mod = MOD) { return mod_mul(a, mod_inverse(b, mod), mod); }
 
 // operator overloading
-template <typename T> std::istream& operator>>(std::istream &is, std::vector<T> &v) { for (auto &it : v) is >> it; return is; }
-template <typename T> std::ostream& operator<<(std::ostream &os, const std::vector<T> &v) { for (const auto &it : v) os << it << ' '; return os; }
-
 template <typename T1, typename T2> std::istream& operator>>(std::istream &is, std::pair<T1, T2> &p) { is >> p.first >> p.second; return is; }
 template <typename T1, typename T2> std::ostream& operator<<(std::ostream &os, const std::pair<T1, T2> &p) { os << p.first << ' ' << p.second; return os; }
+template <typename T> std::istream& operator>>(std::istream &is, std::vector<T> &v) { for (auto &it : v) is >> it; return is; }
+template <typename T> std::ostream& operator<<(std::ostream &os, const std::vector<T> &v) { for (size_t i = 0; i < v.size(); ++i) os << (i ? " " : "") << v[i]; return os; }
 
 // debugging
 #ifdef DYSLEVIUM
-    #define deb(x) std::cerr << #x << " = " << x << '\n'
+    template <typename T>
+    auto __print(const T &x) -> decltype(std::cerr << x, void()) { std::cerr << x; }
+    void _print() { std::cerr << "]\n"; }
+    template <typename T, typename... V>
+    void _print(T &&t, V &&...v) {
+        std::cerr << "(";
+        __print(std::forward<T>(t));
+        std::cerr << ")";
+        if (sizeof...(v)) std::cerr << ", ";
+        _print(std::forward<V>(v)...);
+    }
+    #define deb(...) std::cerr << "[" << #__VA_ARGS__ << "] = ["; _print(__VA_ARGS__)
 #else
-    #define deb(x)
+    #define deb(...)
 #endif
 
 inline void solve();
@@ -120,7 +130,7 @@ int main(int argc, char* argv[]) {
     auto startTime = std::chrono::high_resolution_clock::now();
 
     ll t = 1;
-    std::cin >> t;
+    // std::cin >> t;
 
     while (t--) solve();
 
@@ -138,31 +148,4 @@ using namespace std;
 
 // clang-format on
 
-inline void solve() {
-    ll n, q;
-    cin >> n >> q;
-
-    vl a(n);
-    cin >> a;
-
-    vl b(n);
-    cin >> b;
-
-    vl res(n + 1);
-
-    // cmp from b
-    Fo(i, 1, n + 1) { res[i] = max(b[i - 1], a[i - 1]); }
-
-    // cmp from a
-    Fo(i, 1, n) { res[i] = max(res[i], res[i + 1]); }
-
-    // prefix
-    Fo(i, 1, n + 1) { res[i] += res[i - 1]; }
-    while (q--) {
-        ll l, r;
-        cin >> l >> r;
-
-        cout << res[r] - res[l - 1] << ' ';
-    }
-    cout << '\n';
-}
+inline void solve() {}
