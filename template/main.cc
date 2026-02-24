@@ -1,7 +1,7 @@
 /*
     DYSLEVIUM's template
     Date: 25/February/2026
-    Time: 02:35:23
+    Time: 03:41:34
 */
 
 // clang-format off
@@ -81,7 +81,7 @@ static const constexpr long double PI(3.14159265358979323846);
 // template functions
 template <typename T> inline constexpr T mod_add(const T& a, const T&  b, const T& mod = MOD) { return a + b >= mod ? a + b - mod : a + b; }
 template <typename T> inline constexpr T mod_sub(const T& a, const T&  b, const T& mod = MOD) { return a - b < 0 ? mod_add(a - b, mod) : a - b; }
-template <typename T> inline constexpr T mod_mul(const T& a, const T&  b, const T& mod = MOD) { return ((((a % mod) * (b % mod)) % mod) + mod) % mod; };
+template <typename T> inline constexpr T mod_mul(const T& a, const T&  b, const T& mod = MOD) { return ((((a % mod) * (b % mod)) % mod) + mod) % mod; }
 template <typename T> inline constexpr T bin_pow(T x, T n) {T res = 1; while (n) { if (n & 1) res *= x; x *= x; n >>= 1; } return res; }
 template <typename T> inline constexpr T bin_pow_m(T x, T n, const T& mod = MOD) {T res = 1; while (n) { if (n & 1) res = mod_mul(res, x, mod); x = mod_mul(x, x, mod); n >>= 1; } return res % mod; }
 template <typename T> inline constexpr T mod_inverse(const T& a, const T& mod = MOD) { return bin_pow_m(a, mod - 2, mod); }
@@ -95,9 +95,43 @@ template <typename T> std::ostream& operator<<(std::ostream &os, const std::vect
 
 // debugging
 #ifdef DYSLEVIUM
+    template <typename T, typename = void>
+    struct __streamable : std::false_type {};
+
     template <typename T>
-    auto __print(const T &x) -> decltype(std::cerr << x, void()) { std::cerr << x; }
+    struct __streamable<T, std::void_t<decltype(std::declval<std::ostream&>() << std::declval<const T&>())>> : std::true_type {};
+
+    template <typename T>
+    auto __print(const T &x) -> std::enable_if_t<__streamable<T>::value, void> { std::cerr << x; }
+
+    template <typename T>
+    auto __print(const T &x) -> std::enable_if_t<!__streamable<T>::value, decltype(x.begin(), void())> {
+        for (auto it = x.begin(); it != x.end(); ++it) {
+            if (it != x.begin()) std::cerr << ", ";
+            __print(*it);
+        }
+    }
+
+    template <typename T>
+    void __print(const std::stack<T> &s) {
+        auto c = s;
+        for (bool first = true; !c.empty(); first = false) { if (!first) std::cerr << ", "; __print(c.top()); c.pop(); }
+    }
+
+    template <typename T>
+    void __print(const std::queue<T> &q) {
+        auto c = q;
+        for (bool first = true; !c.empty(); first = false) { if (!first) std::cerr << ", "; __print(c.front()); c.pop(); }
+    }
+
+    template <typename T, typename C, typename Cmp>
+    void __print(const std::priority_queue<T, C, Cmp> &pq) {
+        auto c = pq;
+        for (bool first = true; !c.empty(); first = false) { if (!first) std::cerr << ", "; __print(c.top()); c.pop(); }
+    }
+
     void _print() { std::cerr << "]\n"; }
+
     template <typename T, typename... V>
     void _print(T &&t, V &&...v) {
         std::cerr << "(";
@@ -106,6 +140,7 @@ template <typename T> std::ostream& operator<<(std::ostream &os, const std::vect
         if (sizeof...(v)) std::cerr << ", ";
         _print(std::forward<V>(v)...);
     }
+
     #define deb(...) std::cerr << "[" << #__VA_ARGS__ << "] = ["; _print(__VA_ARGS__)
 #else
     #define deb(...)
