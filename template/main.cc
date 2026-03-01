@@ -1,7 +1,7 @@
 /*
     DYSLEVIUM's template
-    Date: 25/February/2026
-    Time: 03:41:34
+    Date: 02/March/2026
+    Time: 02:08:26
 */
 
 // clang-format off
@@ -167,7 +167,7 @@ int main(int argc, char* argv[]) {
     ll t = 1;
     std::cin >> t;
 
-    while (t--) solve();
+    while (t--) solve() , std::cout << (t ? "\n" : "");
 
     auto endTime = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);

@@ -163,7 +163,7 @@
       "\tauto startTime = std::chrono::high_resolution_clock::now();\n",
       "\tll t = 1;",
       "\tstd::cin >> t;\n",
-      "\twhile (t--) solve();\n",
+      "\twhile (t--) solve() , std::cout << (t ? \"\\n\" : \"\");\n",
       "\tauto endTime = std::chrono::high_resolution_clock::now();",
       "\tauto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);\n",
       "\t#ifdef DYSLEVIUM",
